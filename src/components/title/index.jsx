@@ -8,7 +8,7 @@ const AboutMe = () => {
                     <div className="aboutme_description max-sm:px-4">
                         <h1 className="flex items-center  "><h1 className="text-4xl mt-1  ">Ashen Samarasekera 👋</h1></h1>
                         <div className="aboutme_image">
-                            <img className="my-4" width={100} src="src/assets/images/ashensam.png" alt="" />
+                            <img className="my-4 border-2 border-red-900" width={100} src="../src/assets/images/ashensam.png" alt="" />
                         </div>
                         <p className="mt-2 leading-[25px] text-zinc-800">Hello, As an undergraduate student pursuing a BSc Degree in
                             Software Engineering at ICBT Campus(offered by Cardiff
