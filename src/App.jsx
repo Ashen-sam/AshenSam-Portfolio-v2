@@ -1,3 +1,4 @@
+import Experience from "./components/experience";
 import Projects from "./components/projects";
 import AboutMe from "./components/title";
 import Footer from "./footer";
@@ -7,6 +8,7 @@ const App = () => {
   return (
     <><NavigationBar />
       <AboutMe />
+      <Experience />
       <Projects />
       <Footer />
     </>

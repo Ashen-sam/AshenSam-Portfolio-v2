@@ -1,64 +1,157 @@
-import React from 'react';
 import { useState, useEffect } from 'react';
-import '../../src/index.css'
-import { AiOutlineGithub, AiFillLinkedin } from "react-icons/ai"
+import { AiOutlineGithub, AiFillLinkedin } from "react-icons/ai";
 import { FaWhatsapp } from "react-icons/fa";
-import Modal from '@mui/material/Modal';
-import { Link } from 'react-router-dom';
+import { IoClose } from "react-icons/io5";
 
 const NavigationBar = () => {
     const [open, setOpen] = useState(false);
+    const [scrolling, setScrolling] = useState(false);
+
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
-    const [scrolling, setScrolling] = useState(false);
-    const [number, setNumber] = useState(false)
+
     useEffect(() => {
         const handleScroll = () => {
-            const scrollTop = window.scrollY;
-
-            if (scrollTop > 50) {
+            if (window.scrollY > 50) {
                 setScrolling(true);
             } else {
                 setScrolling(false);
             }
         };
         window.addEventListener('scroll', handleScroll);
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
+        return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
     return (
         <>
-            <div className={`header_wrapper p-4 ${scrolling ? 'bg-blue-950' : 'bg-[#f1f1f1]'} fixed right-0 left-0 transition-[1s] shadow-md z-10`}>
-                <div className="header_container max-w-5xl flex items-center justify-between m-auto">
-                    <div className="header_logo text-gray-900  text-lg ">
-                        <h1 className={`text-[1rem] ${scrolling ? 'text-[whitesmoke] ' : 'text-blue-900'} `}>Ashen Sam</h1>
+            <nav className={`fixed top-0 right-0 left-0 z-50 transition-all duration-300 ${scrolling
+                ? 'bg-blue-950 shadow-lg'
+                : 'bg-white/80 backdrop-blur-sm shadow-md'
+                }`}>
+                <div className="max-w-7xl mx-auto px-4 py-4">
+                    <div className="flex items-center justify-between">
+                        {/* Logo */}
+                        <div className="flex items-center">
+                            <h1 className={`text-xl font-bold transition-colors ${scrolling ? 'text-white' : 'text-blue-900'
+                                }`}>
+                                Ashen Sam
+                            </h1>
+                        </div>
+
+                        {/* Social Links */}
+                        <ul className="flex items-center gap-4">
+                            <li>
+                                <a
+                                    href="https://github.com/Ashen-sam"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className={`text-2xl transition-all hover:scale-110 ${scrolling
+                                        ? 'text-white hover:text-blue-300'
+                                        : 'text-blue-900 hover:text-blue-600'
+                                        }`}
+                                    aria-label="GitHub Profile"
+                                >
+                                    <AiOutlineGithub />
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href="https://www.linkedin.com/in/ashen-samarasekera-08354a249/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className={`text-2xl transition-all hover:scale-110 ${scrolling
+                                        ? 'text-white hover:text-blue-300'
+                                        : 'text-blue-900 hover:text-blue-600'
+                                        }`}
+                                    aria-label="LinkedIn Profile"
+                                >
+                                    <AiFillLinkedin />
+                                </a>
+                            </li>
+                            <li className=' flex'>
+                                <button
+                                    onClick={handleOpen}
+                                    className={`text-2xl transition-all hover:scale-110 ${scrolling
+                                        ? 'text-white hover:text-blue-300'
+                                        : 'text-blue-900 hover:text-blue-600'
+                                        }`}
+                                    aria-label="WhatsApp Contact"
+                                >
+                                    <FaWhatsapp />
+                                </button>
+                            </li>
+                        </ul>
                     </div>
-                    <ul className="header_link flex justify-center items-center gap-4 text-[1.5rem] text-gray-900 ">
-                        <li className={` ${scrolling ? 'text-[whitesmoke] ' : 'text-blue-900'}  hover:text-blue-500 cursor-pointer`}><Link target='_blank' to='https://github.com/Ashen-sam'><AiOutlineGithub /></Link></li>
-                        <li className={` ${scrolling ? 'text-[whitesmoke] ' : 'text-blue-900'}  hover:text-blue-500 cursor-pointer`}><Link target='_blank' to='https://www.linkedin.com/in/ashen-samarasekera-08354a249/'><AiFillLinkedin /></Link></li>
-                        <li onClick={handleOpen} className={` ${scrolling ? 'text-[whitesmoke] ' : 'text-blue-900'}  hover:text-blue-500 cursor-pointer`}><FaWhatsapp /></li>
-                        <li>{number ? '07774728548' : ''}</li>
-                    </ul>
                 </div>
-            </div >
-            <div>
-                <Modal
-                    open={open}
-                    onClose={handleClose}
-                    aria-labelledby="modal-modal-title"
-                    aria-describedby="modal-modal-description"
+            </nav>
+
+            {/* Custom Modal */}
+            {open && (
+                <div
+                    className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm px-4"
+                    onClick={handleClose}
                 >
-                    <div className='popup bg-blue-950  px-[3rem] py-[2rem] max-w-5xl absolute top-[2rem] left-1/2 -translate-x-1/2 translate-y-1/2 border-none text-center transition-all'>
-                        <h2 className='text-3xl my-3 text-white '>0774728548</h2>
-                        <h1 className='text-xl my-3 text-white ' id="modal-modal-description" >
-                            Hey guys send me some message to contact me 👋
-                        </h1>
+                    <div
+                        className="bg-white rounded-2xl shadow-2xl max-w-md w-full p-8 relative animate-scale-in"
+                        onClick={(e) => e.stopPropagation()}
+                    >
+                        {/* Close Button */}
+                        <button
+                            onClick={handleClose}
+                            className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors"
+                            aria-label="Close Modal"
+                        >
+                            <IoClose className="text-2xl" />
+                        </button>
+
+                        {/* WhatsApp Icon */}
+                        <div className="flex justify-center mb-4">
+                            <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center">
+                                <FaWhatsapp className="text-white text-3xl" />
+                            </div>
+                        </div>
+
+                        {/* Content */}
+                        <div className="text-center">
+                            <h2 className="text-3xl font-bold text-gray-900 mb-3">
+                                0774728548
+                            </h2>
+                            <p className="text-gray-600 mb-6">
+                                Hey! Send me a message to get in touch
+                            </p>
+
+                            {/* Action Button */}
+                            <a
+                                href="https://wa.me/94774728548"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-2 bg-green-500 text-white px-6 py-3 rounded-lg font-medium hover:bg-green-600 transition-colors"
+                            >
+                                <FaWhatsapp className="text-xl" />
+                                <span>Open WhatsApp</span>
+                            </a>
+                        </div>
                     </div>
-                </Modal>
-            </div>
+                </div>
+            )}
+
+            <style jsx>{`
+                @keyframes scale-in {
+                    from {
+                        opacity: 0;
+                        transform: scale(0.9);
+                    }
+                    to {
+                        opacity: 1;
+                        transform: scale(1);
+                    }
+                }
+                .animate-scale-in {
+                    animation: scale-in 0.2s ease-out;
+                }
+            `}</style>
         </>
     );
 };
+
 export default NavigationBar;
