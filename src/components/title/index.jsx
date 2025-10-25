@@ -9,7 +9,7 @@ const AboutMe = () => {
     const handleDownloadResume = () => {
         // Create a temporary anchor element to trigger download
         const link = document.createElement('a');
-        link.href = resumePath;
+        link.href = ResumePDF;
         link.download = 'Ashen_Samarasekera_Resume.pdf';
         document.body.appendChild(link);
         link.click();
@@ -31,7 +31,7 @@ const AboutMe = () => {
                         <div className="flex-shrink-0 mx-auto sm:mx-0">
                             <img
                                 className="w-24 h-24 sm:w-28 sm:h-28 rounded-full object-cover border-4 border-blue-100 shadow-md"
-                                src={profileImage}
+                                src={ProfileImage}
                                 alt="Ashen Samarasekera Profile Photo"
                             />
                         </div>
