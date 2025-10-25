@@ -1,10 +1,10 @@
 import { BsAndroid2 } from "react-icons/bs";
 import { TbSql } from "react-icons/tb";
-import { FaReact, FaCss3, FaHtml5, FaSass, FaJava, FaCss3Alt, FaExternalLinkAlt } from "react-icons/fa";
+import { FaReact, FaCss3, FaHtml5, FaSass, FaJava, FaCss3Alt, FaExternalLinkAlt, FaPython } from "react-icons/fa";
 import { BiLogoTailwindCss } from "react-icons/bi";
 import { DiJavascript1 } from "react-icons/di";
 import { FiGithub } from "react-icons/fi";
-import { SiDotnet, SiMicrosoftsqlserver, SiPhp, SiTailwindcss, SiNextdotjs, SiMysql, SiSupabase, SiRedux } from "react-icons/si";
+import { SiDotnet, SiMicrosoftsqlserver, SiPhp, SiTailwindcss, SiNextdotjs, SiMysql, SiSupabase, SiRedux, SiTypescript } from "react-icons/si";
 
 export default function Projects() {
     const projects = [
@@ -118,18 +118,24 @@ export default function Projects() {
                     <h2 className="text-5xl font-bold text-slate-600 mb-6">Personal Projects</h2>
 
                     {/* Tech Stack Icons */}
-                    <div className="flex flex-wrap gap-6 text-blue-900 mb-8">
+                    <div className="flex flex-wrap gap-6 text-blue-900 mb-8 pt-2">
                         <div className="text-4xl hover:scale-110 transition-transform cursor-pointer"><FaHtml5 /></div>
                         <div className="text-4xl hover:scale-110 transition-transform cursor-pointer"><FaCss3Alt /></div>
                         <div className="text-4xl hover:scale-110 transition-transform cursor-pointer"><DiJavascript1 /></div>
+                        <div className="text-4xl hover:scale-110 transition-transform cursor-pointer"><SiTypescript /></div>
                         <div className="text-4xl hover:scale-110 transition-transform cursor-pointer"><FaReact /></div>
+                        <div className="text-4xl hover:scale-110 transition-transform cursor-pointer"><SiNextdotjs /></div>
+                        <div className="text-4xl hover:scale-110 transition-transform cursor-pointer"><SiRedux /></div>
                         <div className="text-4xl hover:scale-110 transition-transform cursor-pointer"><SiTailwindcss /></div>
                         <div className="text-4xl hover:scale-110 transition-transform cursor-pointer"><FaSass /></div>
+                        <div className="text-4xl hover:scale-110 transition-transform cursor-pointer"><SiSupabase /></div>
                         <div className="text-4xl hover:scale-110 transition-transform cursor-pointer"><SiMysql /></div>
+                        <div className="text-4xl hover:scale-110 transition-transform cursor-pointer"><TbSql /></div>
                         <div className="text-4xl hover:scale-110 transition-transform cursor-pointer"><FaJava /></div>
+                        <div className="text-4xl hover:scale-110 transition-transform cursor-pointer"><FaPython /></div>
                     </div>
 
-                    <p className="text-base leading-relaxed text-gray-700 max-w-4xl">
+                    <p className="text-base leading-relaxed text-gray-700 ">
                         In my portfolio, you'll find a diverse collection of projects showcasing expertise across mobile, web, and desktop development. From AI-powered machine learning models and enterprise-level management systems to modern full-stack web applications, each project demonstrates commitment to delivering efficient, user-centric solutions across various technologies and domains.
                     </p>
                 </div>

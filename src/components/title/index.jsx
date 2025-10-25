@@ -1,4 +1,6 @@
 import { IoMdCloudDownload } from "react-icons/io";
+import logoPic from '/public/20210109_160143-removebg-preview.png'
+import resumepdf from '/public/ASHEN SAMARASEKERA  RESUME SE.pdf'
 
 const AboutMe = () => {
     // Update this path to match your resume file location
@@ -8,7 +10,7 @@ const AboutMe = () => {
     const handleDownloadResume = () => {
         // Create a temporary anchor element to trigger download
         const link = document.createElement('a');
-        link.href = resumePath;
+        link.href = resumepdf;
         link.download = 'Ashen_Samarasekera_Resume.pdf';
         document.body.appendChild(link);
         link.click();
@@ -30,7 +32,7 @@ const AboutMe = () => {
                         <div className="flex-shrink-0">
                             <img
                                 className="w-28 h-28 rounded-full object-cover border-4 border-blue-100 shadow-md"
-                                src={profileImage}
+                                src={logoPic}
                                 alt="Ashen Samarasekera Profile Photo"
                             />
                         </div>
