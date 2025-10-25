@@ -1,6 +1,6 @@
 import { IoMdCloudDownload } from "react-icons/io";
 import ProfileImage from '../../../public/20210109_160143-removebg-preview.png'
-import ResumePDF from '../../../public/ASHEN SAMARASEKERA  RESUME SE.pdf'
+import ResumePDF from '../../../public/Ashen Samarasekera Resume Software Engineer.pdf'
 
 const AboutMe = () => {
     // Using placeholder images since we can't import from public folder
