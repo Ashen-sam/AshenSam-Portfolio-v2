@@ -2,8 +2,8 @@ import { IoMdCloudDownload } from "react-icons/io";
 
 const AboutMe = () => {
     // Using placeholder images since we can't import from public folder
-    const profileImage = "public/20210109_160143-removebg-preview.png";
-    const resumePath = "public/ASHEN SAMARASEKERA  RESUME SE.pdf";
+    const profileImage = "../../../public/20210109_160143-removebg-preview.png";
+    const resumePath = "../../../public/ASHEN SAMARASEKERA  RESUME SE.pdf";
 
     const handleDownloadResume = () => {
         // Create a temporary anchor element to trigger download
