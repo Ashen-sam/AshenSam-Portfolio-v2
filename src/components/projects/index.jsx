@@ -112,48 +112,48 @@ export default function Projects() {
 
     return (
         <div className="pb-4 bg-[#fcfcfc]">
-            <div className="max-w-7xl mx-auto px-4">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Header Section */}
-                <div className="mb-16">
-                    <h2 className="text-5xl font-bold text-slate-600 mb-6">Personal Projects</h2>
+                <div className="mb-8 sm:mb-12 md:mb-16">
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-600 mb-4  sm:mb-6 text-center sm:text-left sm:justify-start">Personal Projects</h2>
 
                     {/* Tech Stack Icons */}
-                    <div className="flex flex-wrap gap-6 text-blue-900 mb-8 pt-2">
-                        <div className="text-4xl hover:scale-110 transition-transform cursor-pointer"><FaHtml5 /></div>
-                        <div className="text-4xl hover:scale-110 transition-transform cursor-pointer"><FaCss3Alt /></div>
-                        <div className="text-4xl hover:scale-110 transition-transform cursor-pointer"><DiJavascript1 /></div>
-                        <div className="text-4xl hover:scale-110 transition-transform cursor-pointer"><SiTypescript /></div>
-                        <div className="text-4xl hover:scale-110 transition-transform cursor-pointer"><FaReact /></div>
-                        <div className="text-4xl hover:scale-110 transition-transform cursor-pointer"><SiNextdotjs /></div>
-                        <div className="text-4xl hover:scale-110 transition-transform cursor-pointer"><SiRedux /></div>
-                        <div className="text-4xl hover:scale-110 transition-transform cursor-pointer"><SiTailwindcss /></div>
-                        <div className="text-4xl hover:scale-110 transition-transform cursor-pointer"><FaSass /></div>
-                        <div className="text-4xl hover:scale-110 transition-transform cursor-pointer"><SiSupabase /></div>
-                        <div className="text-4xl hover:scale-110 transition-transform cursor-pointer"><SiMysql /></div>
-                        <div className="text-4xl hover:scale-110 transition-transform cursor-pointer"><TbSql /></div>
-                        <div className="text-4xl hover:scale-110 transition-transform cursor-pointer"><FaJava /></div>
-                        <div className="text-4xl hover:scale-110 transition-transform cursor-pointer"><FaPython /></div>
+                    <div className="flex flex-wrap gap-3 sm:gap-4 md:gap-6 text-blue-900 mb-6 sm:mb-8 pt-2 sm:justify-start justify-center">
+                        <div className="text-2xl sm:text-3xl md:text-4xl hover:scale-110 transition-transform cursor-pointer"><FaHtml5 /></div>
+                        <div className="text-2xl sm:text-3xl md:text-4xl hover:scale-110 transition-transform cursor-pointer"><FaCss3Alt /></div>
+                        <div className="text-2xl sm:text-3xl md:text-4xl hover:scale-110 transition-transform cursor-pointer"><DiJavascript1 /></div>
+                        <div className="text-2xl sm:text-3xl md:text-4xl hover:scale-110 transition-transform cursor-pointer"><SiTypescript /></div>
+                        <div className="text-2xl sm:text-3xl md:text-4xl hover:scale-110 transition-transform cursor-pointer"><FaReact /></div>
+                        <div className="text-2xl sm:text-3xl md:text-4xl hover:scale-110 transition-transform cursor-pointer"><SiNextdotjs /></div>
+                        <div className="text-2xl sm:text-3xl md:text-4xl hover:scale-110 transition-transform cursor-pointer"><SiRedux /></div>
+                        <div className="text-2xl sm:text-3xl md:text-4xl hover:scale-110 transition-transform cursor-pointer"><SiTailwindcss /></div>
+                        <div className="text-2xl sm:text-3xl md:text-4xl hover:scale-110 transition-transform cursor-pointer"><FaSass /></div>
+                        <div className="text-2xl sm:text-3xl md:text-4xl hover:scale-110 transition-transform cursor-pointer"><SiSupabase /></div>
+                        <div className="text-2xl sm:text-3xl md:text-4xl hover:scale-110 transition-transform cursor-pointer"><SiMysql /></div>
+                        <div className="text-2xl sm:text-3xl md:text-4xl hover:scale-110 transition-transform cursor-pointer"><TbSql /></div>
+                        <div className="text-2xl sm:text-3xl md:text-4xl hover:scale-110 transition-transform cursor-pointer"><FaJava /></div>
+                        <div className="text-2xl sm:text-3xl md:text-4xl hover:scale-110 transition-transform cursor-pointer"><FaPython /></div>
                     </div>
 
-                    <p className="text-base leading-relaxed text-gray-700 ">
+                    <p className="text-sm sm:text-base leading-relaxed text-gray-700 sm:text-left text-center">
                         In my portfolio, you'll find a diverse collection of projects showcasing expertise across mobile, web, and desktop development. From AI-powered machine learning models and enterprise-level management systems to modern full-stack web applications, each project demonstrates commitment to delivering efficient, user-centric solutions across various technologies and domains.
                     </p>
                 </div>
 
                 {/* Projects Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6">
                     {projects.map(project => (
                         <div
                             key={project.id}
-                            className="group bg-white border border-gray-200 rounded-xl p-6 hover:shadow-xl hover:border-blue-300 transition-all duration-300"
+                            className="group bg-white border border-gray-200 rounded-xl p-4 sm:p-5 md:p-6 hover:shadow-xl hover:border-blue-300 transition-all duration-300"
                         >
                             {/* Tags */}
                             {project.tags && (
-                                <div className="flex flex-wrap gap-2 mb-3">
+                                <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-2 sm:mb-3">
                                     {project.tags.map((tag, idx) => (
                                         <span
                                             key={idx}
-                                            className="text-xs px-3 py-1 bg-blue-50 text-blue-700 rounded-full font-medium border border-blue-100"
+                                            className="text-xs px-2 sm:px-3 py-1 bg-blue-50 text-blue-700 rounded-full font-medium border border-blue-100"
                                         >
                                             {tag}
                                         </span>
@@ -162,17 +162,17 @@ export default function Projects() {
                             )}
 
                             {/* Title */}
-                            <h3 className="text-xl font-semibold text-gray-900 mb-3 group-hover:text-blue-900 transition-colors">
+                            <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2 sm:mb-3 group-hover:text-blue-900 transition-colors">
                                 {project.title}
                             </h3>
 
                             {/* Description */}
-                            <p className="text-sm text-gray-600 leading-relaxed mb-4 line-clamp-4">
+                            <p className="text-xs sm:text-sm text-gray-600 leading-relaxed mb-3 sm:mb-4 line-clamp-4">
                                 {project.description}
                             </p>
 
                             {/* Tech Icons */}
-                            <div className="flex items-center gap-3 text-blue-900 text-2xl mb-4 flex-wrap">
+                            <div className="flex items-center gap-2 sm:gap-3 text-blue-900 text-xl sm:text-2xl mb-3 sm:mb-4 flex-wrap">
                                 {Array.isArray(project.icons) ? project.icons.map((icon, idx) => (
                                     <div key={idx} className="hover:scale-125 transition-transform">
                                         {icon}
@@ -185,15 +185,15 @@ export default function Projects() {
                             </div>
 
                             {/* Links */}
-                            <div className="flex gap-3 pt-4 border-t border-gray-100">
+                            <div className="flex flex-wrap gap-2 sm:gap-3 pt-3 sm:pt-4 border-t border-gray-100">
                                 {project.link && (
                                     <a
                                         href={project.link}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="flex items-center gap-2 text-sm text-blue-900 hover:text-blue-600 font-medium transition-colors"
+                                        className="flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm text-blue-900 hover:text-blue-600 font-medium transition-colors"
                                     >
-                                        <FiGithub className="text-lg" />
+                                        <FiGithub className="text-base sm:text-lg" />
                                         <span>View Code</span>
                                     </a>
                                 )}
@@ -202,9 +202,9 @@ export default function Projects() {
                                         href={project.site_link}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="flex items-center gap-2 text-sm text-blue-900 hover:text-blue-600 font-medium transition-colors"
+                                        className="flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm text-blue-900 hover:text-blue-600 font-medium transition-colors"
                                     >
-                                        <FaExternalLinkAlt className="text-base" />
+                                        <FaExternalLinkAlt className="text-sm sm:text-base" />
                                         <span>Live Demo</span>
                                     </a>
                                 )}
@@ -214,8 +214,8 @@ export default function Projects() {
                 </div>
 
                 {/* Footer Note */}
-                <div className="mt-16 text-center">
-                    <p className="text-gray-600 text-base">
+                <div className="mt-8 sm:mt-12 md:mt-16 text-center">
+                    <p className="text-gray-600 text-sm sm:text-base">
                         More exciting projects coming soon...
                     </p>
                 </div>

@@ -6,7 +6,7 @@ const Experience = () => {
         <div className=" pb-16 bg-[#fcfcfc]">
             <div className="max-w-7xl mx-auto px-4">
                 {/* Section Header */}
-                <h2 className="text-5xl font-bold text-slate-600 mb-12">Professional Experience</h2>
+                <h2 className="sm:text-5xl text-3xl sm:text-left text-center font-bold text-slate-600 mb-4">Professional Experience</h2>
 
                 {/* Experience Card */}
                 <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-8 hover:shadow-md transition-shadow">
@@ -28,7 +28,7 @@ const Experience = () => {
                     </div>
 
                     {/* Tech Stack Badges */}
-                    <div className="flex flex-wrap gap-2 mb-6">
+                    <div className="flex flex-wrap gap-2 mb-6 ">
                         <span className="px-3 py-1 bg-blue-50 text-blue-900 rounded-full text-sm font-medium border border-blue-100">
                             React
                         </span>
