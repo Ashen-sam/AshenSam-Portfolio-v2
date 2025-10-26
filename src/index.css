@@ -39,3 +39,8 @@
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
     rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 }
+.back_image {
+  background-image: url("../public/IMG_8450.JPG");
+  background-size: cover;
+  background-position: center 35%;
+}

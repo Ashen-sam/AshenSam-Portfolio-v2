@@ -110,116 +110,197 @@ export default function Projects() {
         }
     ];
 
+    const techStack = [
+        { icon: <FaHtml5 />, name: "HTML5" },
+        { icon: <FaCss3Alt />, name: "CSS3" },
+        { icon: <DiJavascript1 />, name: "JavaScript" },
+        { icon: <SiTypescript />, name: "TypeScript" },
+        { icon: <FaReact />, name: "React" },
+        { icon: <SiNextdotjs />, name: "Next.js" },
+        { icon: <SiRedux />, name: "Redux" },
+        { icon: <SiTailwindcss />, name: "Tailwind" },
+        { icon: <FaSass />, name: "Sass" },
+        { icon: <SiSupabase />, name: "Supabase" },
+        { icon: <SiMysql />, name: "MySQL" },
+        { icon: <TbSql />, name: "SQL" },
+        { icon: <FaJava />, name: "Java" },
+        { icon: <FaPython />, name: "Python" }
+    ];
+
     return (
-        <div className="pb-4 bg-[#fcfcfc]">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="pb-16 bg-gray-50">
+            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Header Section */}
-                <div className="mb-8 sm:mb-12 md:mb-16">
-                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-600 mb-4  sm:mb-6 text-center sm:text-left sm:justify-start">Personal Projects</h2>
+                <div className="mb-12 animate-fadeIn">
+                    <h2 className="text-3xl sm:text-4xl font-bold text-gray-600 mb-2 text-center sm:text-left">
+                        Personal Projects
+                    </h2>
+                    <div className="w-20 h-1 bg-blue-600 rounded mb-8"></div>
+
+                    {/* Description */}
+                    <p className="text-gray-700 leading-relaxed mb-8 text-center sm:text-left">
+                        A diverse collection of projects showcasing expertise across mobile, web, and desktop development. From AI-powered machine learning models and enterprise-level management systems to modern full-stack web applications, each project demonstrates commitment to delivering efficient, user-centric solutions across various technologies and domains.
+                    </p>
 
                     {/* Tech Stack Icons */}
-                    <div className="flex flex-wrap gap-3 sm:gap-4 md:gap-6 text-blue-900 mb-6 sm:mb-8 pt-2 sm:justify-start justify-center">
-                        <div className="text-2xl sm:text-3xl md:text-4xl hover:scale-110 transition-transform cursor-pointer"><FaHtml5 /></div>
-                        <div className="text-2xl sm:text-3xl md:text-4xl hover:scale-110 transition-transform cursor-pointer"><FaCss3Alt /></div>
-                        <div className="text-2xl sm:text-3xl md:text-4xl hover:scale-110 transition-transform cursor-pointer"><DiJavascript1 /></div>
-                        <div className="text-2xl sm:text-3xl md:text-4xl hover:scale-110 transition-transform cursor-pointer"><SiTypescript /></div>
-                        <div className="text-2xl sm:text-3xl md:text-4xl hover:scale-110 transition-transform cursor-pointer"><FaReact /></div>
-                        <div className="text-2xl sm:text-3xl md:text-4xl hover:scale-110 transition-transform cursor-pointer"><SiNextdotjs /></div>
-                        <div className="text-2xl sm:text-3xl md:text-4xl hover:scale-110 transition-transform cursor-pointer"><SiRedux /></div>
-                        <div className="text-2xl sm:text-3xl md:text-4xl hover:scale-110 transition-transform cursor-pointer"><SiTailwindcss /></div>
-                        <div className="text-2xl sm:text-3xl md:text-4xl hover:scale-110 transition-transform cursor-pointer"><FaSass /></div>
-                        <div className="text-2xl sm:text-3xl md:text-4xl hover:scale-110 transition-transform cursor-pointer"><SiSupabase /></div>
-                        <div className="text-2xl sm:text-3xl md:text-4xl hover:scale-110 transition-transform cursor-pointer"><SiMysql /></div>
-                        <div className="text-2xl sm:text-3xl md:text-4xl hover:scale-110 transition-transform cursor-pointer"><TbSql /></div>
-                        <div className="text-2xl sm:text-3xl md:text-4xl hover:scale-110 transition-transform cursor-pointer"><FaJava /></div>
-                        <div className="text-2xl sm:text-3xl md:text-4xl hover:scale-110 transition-transform cursor-pointer"><FaPython /></div>
+                    <div className="bg-white rounded-lg shadow-md border border-gray-200 p-6 mb-8">
+                        <h3 className="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2">
+                            <div className="w-1 h-5 bg-blue-600 rounded"></div>
+                            Technologies & Skills
+                        </h3>
+                        <div className="flex flex-wrap gap-4 justify-center sm:justify-start">
+                            {techStack.map((tech, idx) => (
+                                <div
+                                    key={idx}
+                                    className="flex flex-col items-center gap-1 group cursor-pointer"
+                                >
+                                    <div className="text-3xl text-blue-600 transition-all duration-300 group-hover:scale-125 group-hover:text-blue-700">
+                                        {tech.icon}
+                                    </div>
+                                    <span className="text-xs text-gray-600 font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                        {tech.name}
+                                    </span>
+                                </div>
+                            ))}
+                        </div>
                     </div>
-
-                    <p className="text-sm sm:text-base leading-relaxed text-gray-700 sm:text-left text-center">
-                        In my portfolio, you'll find a diverse collection of projects showcasing expertise across mobile, web, and desktop development. From AI-powered machine learning models and enterprise-level management systems to modern full-stack web applications, each project demonstrates commitment to delivering efficient, user-centric solutions across various technologies and domains.
-                    </p>
                 </div>
 
                 {/* Projects Grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6">
-                    {projects.map(project => (
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {projects.map((project, index) => (
                         <div
                             key={project.id}
-                            className="group bg-white border border-gray-200 rounded-xl p-4 sm:p-5 md:p-6 hover:shadow-xl hover:border-blue-300 transition-all duration-300"
+                            className="group bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-xl transition-all duration-500 hover:-translate-y-2 animate-slideUp"
+                            style={{ animationDelay: `${index * 0.1}s` }}
                         >
-                            {/* Tags */}
-                            {project.tags && (
-                                <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-2 sm:mb-3">
-                                    {project.tags.map((tag, idx) => (
-                                        <span
-                                            key={idx}
-                                            className="text-xs px-2 sm:px-3 py-1 bg-blue-50 text-blue-700 rounded-full font-medium border border-blue-100"
-                                        >
-                                            {tag}
-                                        </span>
-                                    ))}
+                            {/* Blue Top Bar */}
+                            <div className="h-1.5 bg-blue-600"></div>
+
+                            <div className="p-6">
+                                {/* Tags */}
+                                {project.tags && (
+                                    <div className="flex flex-wrap gap-2 mb-3">
+                                        {project.tags.map((tag, idx) => (
+                                            <span
+                                                key={idx}
+                                                className="text-xs px-3 py-1 bg-blue-50 text-blue-700 rounded-full font-semibold border border-blue-200"
+                                            >
+                                                {tag}
+                                            </span>
+                                        ))}
+                                    </div>
+                                )}
+
+                                {/* Title */}
+                                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
+                                    {project.title}
+                                </h3>
+
+                                {/* Description */}
+                                <p className="text-sm text-gray-600 leading-relaxed mb-4 line-clamp-4">
+                                    {project.description}
+                                </p>
+
+                                {/* Tech Icons */}
+                                <div className="flex items-center gap-3 text-blue-600 text-2xl mb-4 pb-4 border-b border-gray-100">
+                                    {Array.isArray(project.icons) ? project.icons.map((icon, idx) => (
+                                        <div key={idx} className="hover:scale-125 transition-transform duration-300">
+                                            {icon}
+                                        </div>
+                                    )) : (
+                                        <div className="hover:scale-125 transition-transform duration-300">
+                                            {project.icons}
+                                        </div>
+                                    )}
                                 </div>
-                            )}
 
-                            {/* Title */}
-                            <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2 sm:mb-3 group-hover:text-blue-900 transition-colors">
-                                {project.title}
-                            </h3>
-
-                            {/* Description */}
-                            <p className="text-xs sm:text-sm text-gray-600 leading-relaxed mb-3 sm:mb-4 line-clamp-4">
-                                {project.description}
-                            </p>
-
-                            {/* Tech Icons */}
-                            <div className="flex items-center gap-2 sm:gap-3 text-blue-900 text-xl sm:text-2xl mb-3 sm:mb-4 flex-wrap">
-                                {Array.isArray(project.icons) ? project.icons.map((icon, idx) => (
-                                    <div key={idx} className="hover:scale-125 transition-transform">
-                                        {icon}
-                                    </div>
-                                )) : (
-                                    <div className="hover:scale-125 transition-transform">
-                                        {project.icons}
-                                    </div>
-                                )}
-                            </div>
-
-                            {/* Links */}
-                            <div className="flex flex-wrap gap-2 sm:gap-3 pt-3 sm:pt-4 border-t border-gray-100">
-                                {project.link && (
-                                    <a
-                                        href={project.link}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm text-blue-900 hover:text-blue-600 font-medium transition-colors"
-                                    >
-                                        <FiGithub className="text-base sm:text-lg" />
-                                        <span>View Code</span>
-                                    </a>
-                                )}
-                                {project.site && project.site_link && (
-                                    <a
-                                        href={project.site_link}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm text-blue-900 hover:text-blue-600 font-medium transition-colors"
-                                    >
-                                        <FaExternalLinkAlt className="text-sm sm:text-base" />
-                                        <span>Live Demo</span>
-                                    </a>
-                                )}
+                                {/* Links */}
+                                <div className="flex flex-wrap gap-3">
+                                    {project.link && (
+                                        <a
+                                            href={project.link}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="flex items-center gap-2 text-sm text-gray-700 hover:text-blue-600 font-semibold transition-colors duration-300"
+                                        >
+                                            <FiGithub className="text-lg" />
+                                            <span>Code</span>
+                                        </a>
+                                    )}
+                                    {project.site && project.site_link && (
+                                        <a
+                                            href={project.site_link}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="flex items-center gap-2 text-sm text-gray-700 hover:text-blue-600 font-semibold transition-colors duration-300"
+                                        >
+                                            <FaExternalLinkAlt className="text-base" />
+                                            <span>Demo</span>
+                                        </a>
+                                    )}
+                                </div>
                             </div>
                         </div>
                     ))}
                 </div>
 
                 {/* Footer Note */}
-                <div className="mt-8 sm:mt-12 md:mt-16 text-center">
-                    <p className="text-gray-600 text-sm sm:text-base">
-                        More exciting projects coming soon...
-                    </p>
+                <div className="mt-12 text-center animate-fadeInDelay">
+                    <div className="inline-block bg-white border border-gray-200 rounded-lg px-6 py-3 shadow-sm">
+                        <p className="text-gray-600 text-sm font-medium">
+                            More exciting projects coming soon...
+                        </p>
+                    </div>
                 </div>
             </div>
+
+            <style jsx>{`
+                @keyframes fadeIn {
+                    from {
+                        opacity: 0;
+                        transform: translateY(-10px);
+                    }
+                    to {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                }
+
+                @keyframes fadeInDelay {
+                    from {
+                        opacity: 0;
+                        transform: translateY(10px);
+                    }
+                    to {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                }
+
+                @keyframes slideUp {
+                    from {
+                        opacity: 0;
+                        transform: translateY(30px);
+                    }
+                    to {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                }
+
+                .animate-fadeIn {
+                    animation: fadeIn 0.8s ease-out;
+                }
+
+                .animate-fadeInDelay {
+                    animation: fadeInDelay 0.8s ease-out 1s backwards;
+                }
+
+                .animate-slideUp {
+                    animation: slideUp 0.8s ease-out backwards;
+                }
+            `}</style>
         </div>
     );
 }
