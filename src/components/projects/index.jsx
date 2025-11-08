@@ -4,10 +4,19 @@ import { FaReact, FaCss3, FaHtml5, FaSass, FaJava, FaCss3Alt, FaExternalLinkAlt,
 import { BiLogoTailwindCss } from "react-icons/bi";
 import { DiJavascript1 } from "react-icons/di";
 import { FiGithub } from "react-icons/fi";
-import { SiDotnet, SiMicrosoftsqlserver, SiPhp, SiTailwindcss, SiNextdotjs, SiMysql, SiSupabase, SiRedux, SiTypescript } from "react-icons/si";
+import { SiDotnet, SiMicrosoftsqlserver, SiPhp, SiTailwindcss, SiNextdotjs, SiMysql, SiSupabase, SiRedux, SiTypescript, SiReact, SiCsharp, SiShadcnui } from "react-icons/si";
 
 export default function Projects() {
     const projects = [
+
+        {
+            id: 0,
+            title: "Project Management Web App",
+            description: "A collaborative web app that lets users create and manage projects, assign tasks, comment, react/like, and follow progress in real time.",
+            icons: [<SiReact />, <SiSupabase />, <SiShadcnui />, <SiRedux />, <SiCsharp />],
+            tags: ["Full Stack", "Project Management"],
+            link: 'https://github.com/Ashen-sam/pro-app-api-net'
+        },
         {
             id: 1,
             title: "Community Issue Reporting Platform",
