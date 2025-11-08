@@ -130,19 +130,14 @@ export default function Projects() {
     return (
         <div className="pb-16 bg-gray-50">
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                {/* Header Section */}
                 <div className="mb-12 animate-fadeIn">
                     <h2 className="text-3xl sm:text-4xl font-bold text-gray-600 mb-2 text-center sm:text-left">
                         Personal Projects
                     </h2>
                     <div className="w-20 h-1 bg-blue-600 rounded mb-8"></div>
-
-                    {/* Description */}
                     <p className="text-gray-700 leading-relaxed mb-8 text-center sm:text-left">
                         A diverse collection of projects showcasing expertise across mobile, web, and desktop development. From AI-powered machine learning models and enterprise-level management systems to modern full-stack web applications, each project demonstrates commitment to delivering efficient, user-centric solutions across various technologies and domains.
                     </p>
-
-                    {/* Tech Stack Icons */}
                     <div className="bg-white rounded-lg shadow-md border border-gray-200 p-6 mb-8">
                         <h3 className="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2">
                             <div className="w-1 h-5 bg-blue-600 rounded"></div>
@@ -165,8 +160,6 @@ export default function Projects() {
                         </div>
                     </div>
                 </div>
-
-                {/* Projects Grid */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     {projects.map((project, index) => (
                         <div
@@ -174,11 +167,8 @@ export default function Projects() {
                             className="group bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-xl transition-all duration-500 hover:-translate-y-2 animate-slideUp"
                             style={{ animationDelay: `${index * 0.1}s` }}
                         >
-                            {/* Blue Top Bar */}
                             <div className="h-1.5 bg-blue-600"></div>
-
                             <div className="p-6">
-                                {/* Tags */}
                                 {project.tags && (
                                     <div className="flex flex-wrap gap-2 mb-3">
                                         {project.tags.map((tag, idx) => (
@@ -191,18 +181,12 @@ export default function Projects() {
                                         ))}
                                     </div>
                                 )}
-
-                                {/* Title */}
                                 <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
                                     {project.title}
                                 </h3>
-
-                                {/* Description */}
                                 <p className="text-sm text-gray-600 leading-relaxed mb-4 line-clamp-4">
                                     {project.description}
                                 </p>
-
-                                {/* Tech Icons */}
                                 <div className="flex items-center gap-3 text-blue-600 text-2xl mb-4 pb-4 border-b border-gray-100">
                                     {Array.isArray(project.icons) ? project.icons.map((icon, idx) => (
                                         <div key={idx} className="hover:scale-125 transition-transform duration-300">
@@ -214,8 +198,6 @@ export default function Projects() {
                                         </div>
                                     )}
                                 </div>
-
-                                {/* Links */}
                                 <div className="flex flex-wrap gap-3">
                                     {project.link && (
                                         <a
@@ -244,8 +226,6 @@ export default function Projects() {
                         </div>
                     ))}
                 </div>
-
-                {/* Footer Note */}
                 <div className="mt-12 text-center animate-fadeInDelay">
                     <div className="inline-block bg-white border border-gray-200 rounded-lg px-6 py-3 shadow-sm">
                         <p className="text-gray-600 text-sm font-medium">
@@ -254,7 +234,6 @@ export default function Projects() {
                     </div>
                 </div>
             </div>
-
             <style jsx>{`
                 @keyframes fadeIn {
                     from {
@@ -266,7 +245,6 @@ export default function Projects() {
                         transform: translateY(0);
                     }
                 }
-
                 @keyframes fadeInDelay {
                     from {
                         opacity: 0;
@@ -277,7 +255,6 @@ export default function Projects() {
                         transform: translateY(0);
                     }
                 }
-
                 @keyframes slideUp {
                     from {
                         opacity: 0;
@@ -288,15 +265,12 @@ export default function Projects() {
                         transform: translateY(0);
                     }
                 }
-
                 .animate-fadeIn {
                     animation: fadeIn 0.8s ease-out;
                 }
-
                 .animate-fadeInDelay {
                     animation: fadeInDelay 0.8s ease-out 1s backwards;
                 }
-
                 .animate-slideUp {
                     animation: slideUp 0.8s ease-out backwards;
                 }

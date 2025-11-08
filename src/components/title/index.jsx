@@ -8,9 +8,6 @@ import companyLogo from '../../../public/download.png';
 const AboutMe = () => {
     const [isHovered, setIsHovered] = useState(false);
 
-    // Placeholder data for demo
-
-
     const handleDownloadResume = () => {
         const link = document.createElement('a');
         link.href = ResumePDF;
@@ -23,14 +20,9 @@ const AboutMe = () => {
     return (
         <div className=" pt-24 pb-16 bg-gray-50">
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                {/* Main Card */}
                 <div className="bg-white rounded-md shadow-sm border border-gray-200 overflow-hidden transition-all duration-500 ">
-                    {/* Blue Header Section */}
-                    <div className=" back_image h-32 relative"></div>
-
-                    {/* Content Section */}
+                    <div className="bg-white back_image h-32 relative"></div>
                     <div className="px-6 sm:px-8 md:px-12 pb-8 relative">
-                        {/* Profile Image - Overlapping header */}
                         <div className="flex justify-center sm:justify-start -mt-16 mb-6 animate-slideInLeft">
                             <div className="relative">
                                 <img
@@ -41,18 +33,14 @@ const AboutMe = () => {
                                 <div className="absolute bottom-2 right-2 w-4 h-4 bg-green-500 rounded-full border-2 border-white"></div>
                             </div>
                         </div>
-
-                        {/* Name and Title */}
                         <div className="text-center sm:text-left mb-6 animate-fadeIn">
                             <h1 className="text-3xl sm:text-4xl font-bold text-gray-600 mb-2">
                                 Ashen Samarasekera
                             </h1>
                             <p className="text-lg text-gray-600 font-medium">
-                                Software Engineering Student
+                                Software Engineer
                             </p>
                         </div>
-
-                        {/* Info Cards Grid */}
                         <div className="grid sm:grid-cols-2 gap-4 mb-6 animate-slideInRight">
                             <div className=" border border-blue-200 rounded-lg p-4 transition-all duration-300 hover:shadow-md hover:-translate-y-1">
                                 <div className="flex items-center gap-3">
@@ -65,7 +53,6 @@ const AboutMe = () => {
                                     </div>
                                 </div>
                             </div>
-
                             <div className=" border border-blue-200 rounded-lg p-4 transition-all duration-300 hover:shadow-md hover:-translate-y-1">
                                 <div className="flex items-center gap-3">
                                     <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center flex-shrink-0">
@@ -78,8 +65,6 @@ const AboutMe = () => {
                                 </div>
                             </div>
                         </div>
-
-                        {/* About Section */}
                         <div className="mb-6 animate-fadeInDelay">
                             <h2 className="text-md font-bold text-gray-700 mb-3 flex items-center gap-2">
                                 <div className="w-1 h-6 bg-blue-600 rounded"></div>
@@ -89,8 +74,6 @@ const AboutMe = () => {
                                 As an undergraduate student pursuing a BSc Degree in Software Engineering, I am passionate about web development and committed to contributing innovative solutions in the field. I am seeking opportunities to apply my skills and knowledge to real-world projects.
                             </p>
                         </div>
-
-                        {/* Skills Tags */}
                         <div className="mb-8 animate-fadeInDelay">
                             <h2 className="text-md font-bold text-gray-700 mb-3 flex items-center gap-2">
                                 <div className="w-1 h-6 bg-blue-600 rounded"></div>
@@ -108,8 +91,6 @@ const AboutMe = () => {
                                 </span>
                             </div>
                         </div>
-
-                        {/* Action Button */}
                         <div className="flex justify-center sm:justify-start animate-slideUp">
                             <button
                                 onClick={handleDownloadResume}
@@ -124,7 +105,6 @@ const AboutMe = () => {
                     </div>
                 </div>
             </div>
-
             <style jsx>{`
                 @keyframes fadeIn {
                     from {
@@ -136,7 +116,6 @@ const AboutMe = () => {
                         transform: translateY(0);
                     }
                 }
-
                 @keyframes fadeInDelay {
                     from {
                         opacity: 0;
@@ -147,7 +126,6 @@ const AboutMe = () => {
                         transform: translateY(0);
                     }
                 }
-
                 @keyframes slideInLeft {
                     from {
                         opacity: 0;
@@ -158,7 +136,6 @@ const AboutMe = () => {
                         transform: translateX(0);
                     }
                 }
-
                 @keyframes slideInRight {
                     from {
                         opacity: 0;
@@ -169,7 +146,6 @@ const AboutMe = () => {
                         transform: translateX(0);
                     }
                 }
-
                 @keyframes slideUp {
                     from {
                         opacity: 0;
@@ -180,23 +156,18 @@ const AboutMe = () => {
                         transform: translateY(0);
                     }
                 }
-
                 .animate-fadeIn {
                     animation: fadeIn 0.8s ease-out;
                 }
-
                 .animate-fadeInDelay {
                     animation: fadeInDelay 0.8s ease-out 0.4s backwards;
                 }
-
                 .animate-slideInLeft {
                     animation: slideInLeft 0.8s ease-out 0.2s backwards;
                 }
-
                 .animate-slideInRight {
                     animation: slideInRight 0.8s ease-out 0.3s backwards;
                 }
-
                 .animate-slideUp {
                     animation: slideUp 0.8s ease-out 0.5s backwards;
                 }

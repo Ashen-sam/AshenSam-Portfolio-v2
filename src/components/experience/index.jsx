@@ -1,12 +1,10 @@
-import React from 'react';
-import { FaBriefcase, FaCalendarAlt, FaMapMarkerAlt } from 'react-icons/fa';
+import { FaCalendarAlt } from 'react-icons/fa';
 import companyLogo from '../../../public/download.png';
 
 const Experience = () => {
     return (
         <div className="pb-16 bg-gray-50">
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                {/* Section Header */}
                 <div className="mb-8 animate-fadeIn">
                     <h2 className="text-3xl sm:text-4xl font-bold text-gray-600 mb-2 text-center sm:text-left">
                         Professional Experience
@@ -14,13 +12,10 @@ const Experience = () => {
                     <div className="w-20 h-1 bg-blue-600 rounded"></div>
                 </div>
 
-                {/* Experience Card */}
                 <div className="bg-white rounded-md shadow-sm border border-gray-200 overflow-hidden transition-all duration-500 hover:shadow-xl animate-slideUp">
-                    {/* Blue Header Strip */}
                     <div className="h-2 bg-blue-600"></div>
 
                     <div className="p-6 sm:p-8">
-                        {/* Company and Role Header */}
                         <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-6">
                             <div className="flex items-start gap-4">
                                 <div className="w-14 h-14  rounded-lg flex items-center justify-center text-white flex-shrink-0 ">
@@ -45,14 +40,12 @@ const Experience = () => {
                             </div>
                         </div>
 
-                        {/* Description */}
                         <div className="mb-6">
                             <p className="text-gray-700 leading-relaxed">
                                 Completed a 1-year internship working in a collaborative Agile environment, contributing to frontend development across multiple projects including Test Bolt (QA tool), Inzinq HR application, and the company website. Gained hands-on experience in building responsive user interfaces, implementing features efficiently, and applying best practices in modern web development.
                             </p>
                         </div>
 
-                        {/* Key Responsibilities Section */}
                         <div className="mb-6">
                             <h4 className="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2">
                                 <div className="w-1 h-5 bg-blue-600 rounded"></div>
@@ -80,7 +73,6 @@ const Experience = () => {
                             </div>
                         </div>
 
-                        {/* Tech Stack Section */}
                         <div>
                             <h4 className="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2">
                                 <div className="w-1 h-5 bg-blue-600 rounded"></div>

@@ -30,15 +30,12 @@ const NavigationBar = () => {
                 }`}>
                 <div className="max-w-7xl mx-auto px-4 py-4">
                     <div className="flex items-center justify-between">
-                        {/* Logo */}
                         <div className="flex items-center">
                             <h1 className={`text-xl font-bold transition-colors ${scrolling ? 'text-white' : 'text-blue-900'
                                 }`}>
                                 Ashen Sam
                             </h1>
                         </div>
-
-                        {/* Social Links */}
                         <ul className="flex items-center gap-4">
                             <li>
                                 <a
@@ -84,8 +81,6 @@ const NavigationBar = () => {
                     </div>
                 </div>
             </nav>
-
-            {/* Custom Modal */}
             {open && (
                 <div
                     className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm px-4"
@@ -95,7 +90,6 @@ const NavigationBar = () => {
                         className="bg-white rounded-2xl shadow-2xl max-w-md w-full p-8 relative animate-scale-in"
                         onClick={(e) => e.stopPropagation()}
                     >
-                        {/* Close Button */}
                         <button
                             onClick={handleClose}
                             className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors"
@@ -103,15 +97,11 @@ const NavigationBar = () => {
                         >
                             <IoClose className="text-2xl" />
                         </button>
-
-                        {/* WhatsApp Icon */}
                         <div className="flex justify-center mb-4">
                             <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center">
                                 <FaWhatsapp className="text-white text-3xl" />
                             </div>
                         </div>
-
-                        {/* Content */}
                         <div className="text-center">
                             <h2 className="text-3xl font-bold text-gray-900 mb-3">
                                 0774728548
@@ -119,8 +109,6 @@ const NavigationBar = () => {
                             <p className="text-gray-600 mb-6">
                                 Hey! Send me a message to get in touch
                             </p>
-
-                            {/* Action Button */}
                             <a
                                 href="https://wa.me/94774728548"
                                 target="_blank"
@@ -134,7 +122,6 @@ const NavigationBar = () => {
                     </div>
                 </div>
             )}
-
             <style jsx>{`
                 @keyframes scale-in {
                     from {
