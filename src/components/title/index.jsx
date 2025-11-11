@@ -93,7 +93,7 @@ const AboutMe = () => {
                         </div>
                         <div className="flex justify-center sm:justify-start animate-slideUp">
                             <button
-                                onClick={handleDownloadResume}
+                                onClick={() => { }}
                                 onMouseEnter={() => setIsHovered(true)}
                                 onMouseLeave={() => setIsHovered(false)}
                                 className="bg-blue-600 text-sm flex items-center gap-3 px-3 py-3 rounded-lg text-white  font-semibold shadow-md hover:bg-blue-700 transition-all duration-300 hover:shadow-lg hover:scale-105"
