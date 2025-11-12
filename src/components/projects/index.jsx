@@ -96,7 +96,6 @@ export default function Projects() {
             icons: [<FaReact />, <FaCss3 />],
             tags: ["Portfolio", "React"],
             site: true,
-            site_link: 'https://ashen-sam.github.io/SAM-PORTFOLIO/',
             link: 'https://github.com/Ashen-sam/SAM-PORTFOLIO'
         },
         {
