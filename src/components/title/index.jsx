@@ -112,7 +112,7 @@ const AboutMe = () => {
                         <h1 className="text-3xl sm:text-4xl font-bold text-gray-700 mb-3">
                             Hey I'm{" "}
                             <span className={`${theme.secondary}`}>Ashen,</span>{" "}
-                            <span className="text-2xl text-gray-700">
+                            <span className="text-xl font-medium text-gray-700 italic">
                                 Software Engineer
                             </span>
                         </h1>

@@ -19,8 +19,7 @@ const App = () => {
   return (
     <ThemeProvider>
       <div className="relative min-h-screen overflow-hidden">
-        {/* Splash Screen */}
-        {/* Add this inside the main div, above Splash Screen and content */}
+
 
 
         <AnimatePresence mode="wait">
@@ -47,13 +46,32 @@ const App = () => {
                 className="text-5xl sm:text-6xl font-bold text-white"
               >
                 <motion.span
+                  initial={{ rotate: 0, scale: 1 }}
                   animate={{
-                    backgroundSize: ["300% 100%"],
-                    transition: { duration: 2, repeat: Infinity, ease: "linear" },
+                    rotate: 360,
+                    transition: { duration: 2, repeat: Infinity, ease: "easeInOut" },
                   }}
+                  exit={{
+                    scale: 0.5,
+                    opacity: 0,
+                    transition: { duration: 0.8, ease: "easeInOut" },
+                  }}
+                  className="flex items-center justify-center"
                 >
-                  <img src={pageLogo} width={300} height={300} alt="" />
+                  <motion.img
+                    src={pageLogo}
+                    width={300}
+                    height={300}
+                    alt="Logo"
+                    initial={{ scale: 1 }}
+                    exit={{
+                      scale: 0.5,
+                      opacity: 0,
+                      transition: { duration: 0.8, ease: "easeInOut" },
+                    }}
+                  />
                 </motion.span>
+
               </motion.h1>
             </motion.div>
           )}

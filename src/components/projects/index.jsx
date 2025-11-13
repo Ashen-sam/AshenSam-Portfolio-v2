@@ -70,7 +70,7 @@ export default function Projects() {
     const projects = [
         {
             id: 0,
-            title: "Project Management Web App",
+            title: "Project Management Web App (ongoing)",
             description: "A collaborative web app that lets users create and manage projects, assign tasks, comment, react/like, and follow progress in real time.",
             icons: [<SiReact />, <SiSupabase />, <SiShadcnui />, <SiRedux />, <SiCsharp />],
             tags: ["Full Stack", "Project Management"],
@@ -250,7 +250,7 @@ export default function Projects() {
                 </motion.div>
 
                 <div className="p-6 mx-auto bg-white rounded-2xl rounded-tl-none shadow-sm border border-gray-200">
-                    <motion.div className="grid grid-cols-1 md:grid-cols-3 gap-6" variants={containerVariants}>
+                    <motion.div className="grid grid-cols-1 md:grid-cols-4 gap-6" variants={containerVariants}>
                         {projects.map((project) => (
                             <motion.div
                                 key={project.id}
@@ -296,9 +296,9 @@ export default function Projects() {
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                                 </div>
 
-                                <div className="p-6 relative">
-                                    <h3 className="text-lg font-bold text-gray-900 mb-2">{project.title}</h3>
-                                    <p className="text-sm text-gray-600 leading-relaxed mb-4 line-clamp-2">{project.description}</p>
+                                <div className="p-3 relative">
+                                    <h3 className="text-md font-bold text-gray-900 mb-2">{project.title}</h3>
+                                    <p className="text-xs text-gray-600 leading-relaxed mb-4 line-clamp-3">{project.description}</p>
 
                                     <div className="flex items-center gap-2 text-white text-lg mb-4 absolute -top-8">
                                         {Array.isArray(project.icons)
@@ -317,7 +317,7 @@ export default function Projects() {
                                             rel="noopener noreferrer"
                                             className="inline-flex items-center gap-2 text-sm text-gray-700 hover:text-gray-900 font-medium group/link transition-colors"
                                         >
-                                            <span>View project</span>
+                                            <span className="text-xs">View project</span>
                                             <FaArrowRight className="text-xs group-hover/link:translate-x-1 transition-transform" />
                                         </a>
                                     )}
