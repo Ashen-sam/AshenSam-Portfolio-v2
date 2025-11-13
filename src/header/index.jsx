@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
-import { AiOutlineGithub, AiFillLinkedin } from "react-icons/ai";
+import { useEffect, useState } from 'react';
+import { AiFillLinkedin, AiOutlineGithub } from "react-icons/ai";
 import { FaWhatsapp } from "react-icons/fa";
 import { IoClose } from "react-icons/io5";
 

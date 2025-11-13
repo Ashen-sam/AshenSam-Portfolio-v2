@@ -1,20 +1,63 @@
-import { BsAndroid2 } from "react-icons/bs";
-import { TbSql } from "react-icons/tb";
-import { FaReact, FaCss3, FaHtml5, FaSass, FaJava, FaCss3Alt, FaExternalLinkAlt, FaPython } from "react-icons/fa";
+import { motion } from "framer-motion";
+import { useState } from "react";
 import { BiLogoTailwindCss } from "react-icons/bi";
+import { BsAndroid2 } from "react-icons/bs";
 import { DiJavascript1 } from "react-icons/di";
-import { FiGithub } from "react-icons/fi";
-import { SiDotnet, SiMicrosoftsqlserver, SiPhp, SiTailwindcss, SiNextdotjs, SiMysql, SiSupabase, SiRedux, SiTypescript, SiReact, SiCsharp, SiShadcnui } from "react-icons/si";
+import { FaArrowRight, FaCss3, FaHtml5, FaJava, FaReact } from "react-icons/fa";
+import {
+    SiAzuredevops,
+    SiCsharp,
+    SiCss3,
+    SiDotnet,
+    SiGithub,
+    SiHtml5,
+    SiJavascript,
+    SiMicrosoftsqlserver,
+    SiMui,
+    SiMysql,
+    SiNextdotjs,
+    SiPhp,
+    SiPostman,
+    SiReact,
+    SiRedux,
+    SiShadcnui,
+    SiSupabase,
+    SiTailwindcss,
+    SiTypescript,
+    SiVercel,
+} from "react-icons/si";
+import { TbSql } from "react-icons/tb";
 
 export default function Projects() {
-    const projects = [
+    const [activeTechStack, setActiveTechStack] = useState(null);
 
+    const techIcons = [
+        <SiReact color="#61DAFB" />,       // React blue
+        <SiTypescript color="#3178C6" />,   // TypeScript blue
+        <SiTailwindcss color="#38B2AC" />,  // Tailwind cyan
+        <SiRedux color="#764ABC" />,        // Redux purple
+        <SiSupabase color="#3ECF8E" />,     // Supabase green
+        <SiShadcnui color="#000000" />,     // Example orange for Shadcn (no official color)
+        <SiJavascript color="#F7DF1E" />,   // JavaScript yellow
+        <SiHtml5 color="#E34F26" />,        // HTML orange
+        <SiCss3 color="#1572B6" />,         // CSS blue
+        <SiPostman color="#FF6C37" />,      // Postman orange
+        <FaJava color="#007396" />,         // Java blue
+        <SiNextdotjs color="#000000" />,    // Next.js black
+        <SiMui color="#007FFF" />,
+        <SiGithub color="#764ABC" />,
+        <SiAzuredevops color="#007FFF" />,
+        <SiVercel color="#000000" />
+    ];
+
+    const projects = [
         {
             id: 0,
             title: "Project Management Web App",
             description: "A collaborative web app that lets users create and manage projects, assign tasks, comment, react/like, and follow progress in real time.",
             icons: [<SiReact />, <SiSupabase />, <SiShadcnui />, <SiRedux />, <SiCsharp />],
             tags: ["Full Stack", "Project Management"],
+            image: '../../../public/Screenshot 2025-11-13 084737.png',
             link: 'https://github.com/Ashen-sam/pro-app-api-net'
         },
         {
@@ -23,6 +66,7 @@ export default function Projects() {
             description: "Final year project - A web application for Makola residents to report local issues efficiently. Features real-time updates, secure authentication, and location-based reporting with photo uploads.",
             icons: [<SiNextdotjs />, <SiSupabase />, <SiRedux />, <BiLogoTailwindCss />],
             tags: ["Final Year Project", "Full Stack"],
+            image: '../../../public/Screenshot 2025-11-13 085928.png',
             link: 'https://github.com/Ashen-sam/makola-web-application'
         },
         {
@@ -116,173 +160,159 @@ export default function Projects() {
             tags: ["Portfolio", "Current"],
             link: 'https://github.com/Ashen-sam/final-Project'
         }
+        // Add other projects here...
     ];
 
-    const techStack = [
-        { icon: <FaHtml5 />, name: "HTML5" },
-        { icon: <FaCss3Alt />, name: "CSS3" },
-        { icon: <DiJavascript1 />, name: "JavaScript" },
-        { icon: <SiTypescript />, name: "TypeScript" },
-        { icon: <FaReact />, name: "React" },
-        { icon: <SiNextdotjs />, name: "Next.js" },
-        { icon: <SiRedux />, name: "Redux" },
-        { icon: <SiTailwindcss />, name: "Tailwind" },
-        { icon: <FaSass />, name: "Sass" },
-        { icon: <SiSupabase />, name: "Supabase" },
-        { icon: <SiMysql />, name: "MySQL" },
-        { icon: <TbSql />, name: "SQL" },
-        { icon: <FaJava />, name: "Java" },
-        { icon: <FaPython />, name: "Python" }
-    ];
+    // Container variants for staggered scroll animation
+    const containerVariants = {
+        hidden: {},
+        visible: {
+            transition: {
+                staggerChildren: 0.2,
+            },
+        },
+    };
+
+    // Card animation: slide up + fade in
+    const cardVariants = {
+        hidden: { opacity: 0, y: 50 },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: { type: "spring", stiffness: 80, damping: 12 },
+        },
+    };
 
     return (
-        <div className="pb-16 bg-gray-50">
-            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="mb-12 animate-fadeIn">
-                    <h2 className="text-3xl sm:text-4xl font-bold text-gray-600 mb-2 text-center sm:text-left">
-                        Personal Projects
-                    </h2>
-                    <div className="w-20 h-1 bg-blue-600 rounded mb-8"></div>
-                    <p className="text-gray-700 leading-relaxed mb-8 text-center sm:text-left">
-                        A diverse collection of projects showcasing expertise across mobile, web, and desktop development. From AI-powered machine learning models and enterprise-level management systems to modern full-stack web applications, each project demonstrates commitment to delivering efficient, user-centric solutions across various technologies and domains.
-                    </p>
-                    <div className="bg-white rounded-lg shadow-md border border-gray-200 p-6 mb-8">
-                        <h3 className="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2">
-                            <div className="w-1 h-5 bg-blue-600 rounded"></div>
-                            Technologies & Skills
-                        </h3>
-                        <div className="flex flex-wrap gap-4 justify-center sm:justify-start">
-                            {techStack.map((tech, idx) => (
-                                <div
-                                    key={idx}
-                                    className="flex flex-col items-center gap-1 group cursor-pointer"
-                                >
-                                    <div className="text-3xl text-blue-600 transition-all duration-300 group-hover:scale-125 group-hover:text-blue-700">
-                                        {tech.icon}
-                                    </div>
-                                    <span className="text-xs text-gray-600 font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                        {tech.name}
-                                    </span>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {projects.map((project, index) => (
-                        <div
-                            key={project.id}
-                            className="group bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-xl transition-all duration-500 hover:-translate-y-2 animate-slideUp"
-                            style={{ animationDelay: `${index * 0.1}s` }}
+        <motion.div
+            className="pb-16"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={containerVariants}
+        >
+            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mt-10">
+                <motion.div
+                    className="my-10 flex gap-4 items-center mx-auto justify-center"
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    variants={containerVariants}
+                >
+                    {techIcons.map((icon, idx) => (
+                        <motion.div
+                            key={idx}
+                            className="text-3xl "
+                            variants={cardVariants}
                         >
-                            <div className="h-1.5 bg-blue-600"></div>
-                            <div className="p-6">
-                                {project.tags && (
-                                    <div className="flex flex-wrap gap-2 mb-3">
-                                        {project.tags.map((tag, idx) => (
-                                            <span
-                                                key={idx}
-                                                className="text-xs px-3 py-1 bg-blue-50 text-blue-700 rounded-full font-semibold border border-blue-200"
+                            {icon}
+                        </motion.div>
+                    ))}
+                </motion.div>
+                {/* My Work Section */}
+                <motion.div
+                    variants={cardVariants}
+                    className="flex items-center "
+                >
+                    {/* My Work Box */}
+                    <motion.div
+                        className="bg-gray-800 text-white px-4 py-2 rounded-t-lg flex items-center justify-center"
+                        whileHover={{ scale: 1.05 }}
+                        transition={{ type: "spring", stiffness: 300 }}
+                    >
+                        My Work
+                    </motion.div>
+
+
+
+
+                </motion.div>
+
+                {/* Projects Grid */}
+                <div className="p-6 mx-auto bg-white rounded-2xl rounded-tl-none shadow-sm border border-gray-200">
+                    <motion.div className="grid grid-cols-1 md:grid-cols-3 gap-6" variants={containerVariants}>
+                        {projects.map((project) => (
+                            <motion.div
+                                key={project.id}
+                                className="group bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition-all duration-300 cursor-pointer"
+                                variants={cardVariants}
+                                whileHover={{ scale: 1.05 }}
+                            >
+                                {/* Project Image */}
+                                <div className="relative h-48 bg-gray-200 overflow-hidden">
+                                    {project.image ? <img
+                                        src={project.image}
+                                        alt={project.title}
+                                        className="w-full h-full object-center group-hover:scale-105 transition-transform duration-500"
+                                    /> : (
+                                        <div className="flex flex-col justify-center items-center min-h-[200px] text-gray-700 text-lg font-medium italic">
+
+                                            {/* Animated Text */}
+                                            <motion.div
+                                                className="mb-4"
+                                                initial={{ opacity: 0, y: -10 }}
+                                                animate={{ opacity: 1, y: 0 }}
+                                                transition={{ duration: 0.8 }}
                                             >
-                                                {tag}
-                                            </span>
-                                        ))}
-                                    </div>
-                                )}
-                                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
-                                    {project.title}
-                                </h3>
-                                <p className="text-sm text-gray-600 leading-relaxed mb-4 line-clamp-4">
-                                    {project.description}
-                                </p>
-                                <div className="flex items-center gap-3 text-blue-600 text-2xl mb-4 pb-4 border-b border-gray-100">
-                                    {Array.isArray(project.icons) ? project.icons.map((icon, idx) => (
-                                        <div key={idx} className="hover:scale-125 transition-transform duration-300">
-                                            {icon}
-                                        </div>
-                                    )) : (
-                                        <div className="hover:scale-125 transition-transform duration-300">
-                                            {project.icons}
+                                                Images are In Development
+                                            </motion.div>
+
+                                            {/* Elegant Dots Loader */}
+                                            <div className="flex space-x-2">
+                                                {[0, 1, 2].map((i) => (
+                                                    <motion.span
+                                                        key={i}
+                                                        className="w-3 h-3 bg-gray-500 rounded-full"
+                                                        animate={{ y: [0, -8, 0] }}
+                                                        transition={{
+                                                            duration: 0.6,
+                                                            repeat: Infinity,
+                                                            delay: i * 0.2,
+                                                            ease: "easeInOut",
+                                                        }}
+                                                    />
+                                                ))}
+                                            </div>
+
                                         </div>
                                     )}
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                                 </div>
-                                <div className="flex flex-wrap gap-3">
+
+                                {/* Project Content */}
+                                <div className="p-6 relative">
+                                    <h3 className="text-lg font-bold text-gray-900 mb-2">{project.title}</h3>
+                                    <p className="text-sm text-gray-600 leading-relaxed mb-4 line-clamp-2">{project.description}</p>
+
+                                    {/* Tech Stack Icons (above card) */}
+                                    <div className="flex items-center gap-2 text-white text-lg mb-4 absolute -top-8">
+                                        {Array.isArray(project.icons)
+                                            ? project.icons.map((icon, idx) => (
+                                                <div key={idx} className="hover:text-gray-900 transition-colors">
+                                                    {icon}
+                                                </div>
+                                            ))
+                                            : project.icons}
+                                    </div>
+
+                                    {/* View Project Link */}
                                     {project.link && (
                                         <a
                                             href={project.link}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="flex items-center gap-2 text-sm text-gray-700 hover:text-blue-600 font-semibold transition-colors duration-300"
+                                            className="inline-flex items-center gap-2 text-sm text-gray-700 hover:text-gray-900 font-medium group/link transition-colors"
                                         >
-                                            <FiGithub className="text-lg" />
-                                            <span>Code</span>
-                                        </a>
-                                    )}
-                                    {project.site && project.site_link && (
-                                        <a
-                                            href={project.site_link}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="flex items-center gap-2 text-sm text-gray-700 hover:text-blue-600 font-semibold transition-colors duration-300"
-                                        >
-                                            <FaExternalLinkAlt className="text-base" />
-                                            <span>Demo</span>
+                                            <span>View project</span>
+                                            <FaArrowRight className="text-xs group-hover/link:translate-x-1 transition-transform" />
                                         </a>
                                     )}
                                 </div>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-                <div className="mt-12 text-center animate-fadeInDelay">
-                    <div className="inline-block bg-white border border-gray-200 rounded-lg px-6 py-3 shadow-sm">
-                        <p className="text-gray-600 text-sm font-medium">
-                            More exciting projects coming soon...
-                        </p>
-                    </div>
+                            </motion.div>
+                        ))}
+                    </motion.div>
                 </div>
             </div>
-            <style jsx>{`
-                @keyframes fadeIn {
-                    from {
-                        opacity: 0;
-                        transform: translateY(-10px);
-                    }
-                    to {
-                        opacity: 1;
-                        transform: translateY(0);
-                    }
-                }
-                @keyframes fadeInDelay {
-                    from {
-                        opacity: 0;
-                        transform: translateY(10px);
-                    }
-                    to {
-                        opacity: 1;
-                        transform: translateY(0);
-                    }
-                }
-                @keyframes slideUp {
-                    from {
-                        opacity: 0;
-                        transform: translateY(30px);
-                    }
-                    to {
-                        opacity: 1;
-                        transform: translateY(0);
-                    }
-                }
-                .animate-fadeIn {
-                    animation: fadeIn 0.8s ease-out;
-                }
-                .animate-fadeInDelay {
-                    animation: fadeInDelay 0.8s ease-out 1s backwards;
-                }
-                .animate-slideUp {
-                    animation: slideUp 0.8s ease-out backwards;
-                }
-            `}</style>
-        </div>
+        </motion.div>
     );
 }

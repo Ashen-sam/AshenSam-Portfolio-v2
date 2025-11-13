@@ -1,12 +1,12 @@
-import { IoMdCloudDownload } from "react-icons/io";
+import { motion } from "framer-motion";
 import { useState } from "react";
-import ProfileImage from '../../../public/20210109_160143-removebg-preview.png'
-import ResumePDF from '../../../public/Ashen Samarasekera Resume Software Engineer.pdf'
-import logoUni from '../../../public/images.png'
-import companyLogo from '../../../public/download.png';
+import ProfileImage from '../../../public/20210109_160143-removebg-preview.png';
+import ResumePDF from '../../../public/Ashen Samarasekera Resume Software Engineer.pdf';
+import { useTheme } from "../ThemeContext";
 
 const AboutMe = () => {
     const [isHovered, setIsHovered] = useState(false);
+    const { theme } = useTheme()
 
     const handleDownloadResume = () => {
         const link = document.createElement('a');
@@ -17,162 +17,157 @@ const AboutMe = () => {
         document.body.removeChild(link);
     };
 
+    // Framer Motion variants for smooth jump from top
+    const jumpVariants = {
+        hidden: { y: -300 }, // start 100px above
+        visible: {
+            y: 0,              // end at normal position
+            transition: {
+                type: "spring",
+                stiffness: 80,
+                damping: 12
+            }
+        }
+    };
+
+    const floatingVariants = {
+        animate: {
+            y: [0, -10, 0, 10, 0], // Moves up and down
+            rotate: [0, 1, -1, 1, 0], // Slight rotation for subtle motion
+            transition: {
+                duration: 6,
+                repeat: Infinity,
+                ease: "easeInOut",
+            },
+        },
+    };
+
+    const pulseVariants = {
+        animate: {
+            boxShadow: [
+                "1px 0 0px rgba(255,165,0,0.4)",
+                "1px 2px 20px rgba(255,165,0,0.6)",
+                "1px 2px 0px rgba(255,165,0,0.4)",
+            ],
+            transition: {
+                duration: 3,
+                repeat: Infinity,
+                ease: "easeInOut",
+            },
+        },
+    };
+
     return (
-        <div className=" pt-24 pb-16 bg-gray-50">
-            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="bg-white rounded-md shadow-sm border border-gray-200 overflow-hidden transition-all duration-500 ">
-                    <div className="bg-white back_image h-32 relative"></div>
-                    <div className="px-6 sm:px-8 md:px-12 pb-8 relative">
-                        <div className="flex justify-center sm:justify-start -mt-16 mb-6 animate-slideInLeft">
-                            <div className="relative">
-                                <img
-                                    className="w-32 h-32 rounded-full object-cover border-4 border-white shadow-lg transform transition-transform duration-500 hover:scale-105"
-                                    src={ProfileImage}
-                                    alt="Ashen Samarasekera Profile Photo"
-                                />
-                                <div className="absolute bottom-2 right-2 w-4 h-4 bg-green-500 rounded-full border-2 border-white"></div>
-                            </div>
-                        </div>
-                        <div className="text-center sm:text-left mb-6 animate-fadeIn">
-                            <h1 className="text-3xl sm:text-4xl font-bold text-gray-600 mb-2">
-                                Ashen Samarasekera
-                            </h1>
-                            <p className="text-lg text-gray-600 font-medium">
-                                Software Engineer
-                            </p>
-                        </div>
-                        <div className="grid sm:grid-cols-2 gap-4 mb-6 animate-slideInRight">
-                            <div className=" border border-blue-200 rounded-lg p-4 transition-all duration-300 hover:shadow-md hover:-translate-y-1">
-                                <div className="flex items-center gap-3">
-                                    <div className="w-10 h-10  rounded-lg flex items-center justify-center flex-shrink-0">
-                                        <span className="text-white text-lg"><img src={logoUni} alt="University Logo" width={40} height={20} /></span>
-                                    </div>
-                                    <div>
-                                        <p className="text-xs text-gray-600 font-medium mb-1">University</p>
-                                        <p className="text-sm text-gray-900 font-semibold">Cardiff Metropolitan University</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className=" border border-blue-200 rounded-lg p-4 transition-all duration-300 hover:shadow-md hover:-translate-y-1">
-                                <div className="flex items-center gap-3">
-                                    <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center flex-shrink-0">
-                                        <span className="text-white text-lg"><img src={companyLogo} alt="Campus Logo" width={40} height={20} /></span>
-                                    </div>
-                                    <div>
-                                        <p className="text-xs text-gray-600 font-medium mb-1">Experience</p>
-                                        <p className="text-sm text-gray-900 font-semibold">Former Software Engineer Intern</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="mb-6 animate-fadeInDelay">
-                            <h2 className="text-md font-bold text-gray-700 mb-3 flex items-center gap-2">
-                                <div className="w-1 h-6 bg-blue-600 rounded"></div>
-                                About Me
-                            </h2>
-                            <p className="text-gray-700 text-md leading-relaxed">
-                                As an undergraduate student pursuing a BSc Degree in Software Engineering, I am passionate about web development and committed to contributing innovative solutions in the field. I am seeking opportunities to apply my skills and knowledge to real-world projects.
-                            </p>
-                        </div>
-                        <div className="mb-8 animate-fadeInDelay">
-                            <h2 className="text-md font-bold text-gray-700 mb-3 flex items-center gap-2">
-                                <div className="w-1 h-6 bg-blue-600 rounded"></div>
-                                Interests
-                            </h2>
-                            <div className="flex flex-wrap gap-2">
-                                <span className="px-3 py-2 bg-white text-blue-700 border-2 border-blue-600 rounded-lg text-xs font-semibold transition-all duration-300 hover:bg-blue-600 hover:text-white">
-                                    Web Development
-                                </span>
-                                <span className="px-3 py-2 bg-white text-blue-700 border-2 border-blue-600 rounded-lg text-xs font-semibold transition-all duration-300 hover:bg-blue-600 hover:text-white">
-                                    Software Engineering
-                                </span>
-                                <span className="px-3 py-2 bg-white text-blue-700 border-2 border-blue-600 rounded-lg text-xs font-semibold transition-all duration-300 hover:bg-blue-600 hover:text-white">
-                                    Innovation
-                                </span>
-                            </div>
-                        </div>
-                        <div className="flex justify-center sm:justify-start animate-slideUp">
-                            <button
-                                onClick={() => { }}
+        <motion.div
+            className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mt-10 "
+            initial="hidden"
+            animate="visible"
+            variants={{
+                hidden: {},
+                visible: {
+                    transition: {
+                        staggerChildren: 0.2, // jump one by one
+                    }
+                }
+            }}
+        >
+            {/* "Hi Friends" Section */}
+            <motion.div
+                className="bg-gray-800 w-[100px] p-2 text-white flex items-center justify-center rounded-t-lg "
+                variants={jumpVariants}
+            >
+                Hi Friends
+            </motion.div>
+
+            {/* Profile Card */}
+            <motion.div
+                className="bg-white rounded-2xl rounded-tl-none border border-gray-200 shadow-sm p-8 pb-0"
+                variants={jumpVariants}
+            >
+                <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6 h-max">
+                    {/* Profile Image */}
+                    <motion.div
+                        className="flex-shrink-0 rounded-2xl"
+                        variants={floatingVariants}
+                        animate="animate"
+                    >
+                        <motion.div
+                            className="rounded-2xl"
+                            variants={pulseVariants}
+                            animate="animate"
+                        >
+                            <img
+                                className="w-32 h-32 rounded-2xl object-cover"
+                                src={ProfileImage}
+                                alt="Ashen Samarasekera"
+                            />
+                        </motion.div>
+                    </motion.div>
+
+                    {/* Info */}
+                    <motion.div
+                        className="flex-1 text-center sm:text-left"
+                        variants={jumpVariants}
+                    >
+                        <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3">
+                            Hey I'm <span className={`${theme.secondary}`}>Ashen,</span>  Software Engineer
+                        </h1>
+                        <motion.p variants={jumpVariants} className="text-base text-gray-600 leading-relaxed mb-4">
+                            As an undergraduate student pursuing a BSc Degree in Software Engineering, I am passionate about web development and committed to contributing innovative solutions in the field. I am seeking opportunities to apply my skills and knowledge to real-world projects.
+                        </motion.p>
+
+                        {/* Tags */}
+                        <motion.div
+                            className="flex flex-wrap justify-center sm:justify-start gap-2 items-center mb-6"
+                            initial="hidden"
+                            animate="visible"
+                            variants={{
+                                hidden: {},
+                                visible: {
+                                    transition: { staggerChildren: 0.15 } // each tag animates one after another
+                                }
+                            }}
+                        >
+                            {[
+                                "✦", "Web Development", "✦", "Software Engineering", "✦", "Innovation", "✦", "Vibe Coding"
+                            ].map((tag, index) => (
+                                <motion.span
+                                    key={index}
+                                    className={`text-sm ${tag === "✦" ? "text-gray-400" : "text-gray-700"}`}
+                                    variants={{
+                                        hidden: { x: -50, opacity: 0 }, // start slightly left and invisible
+                                        visible: {
+                                            x: 0, // slide to natural position
+                                            opacity: 1,
+                                            transition: { duration: 0.5, ease: "easeOut" } // smooth slow movement
+                                        }
+                                    }}
+                                >
+                                    {tag}
+                                </motion.span>
+                            ))}
+                        </motion.div>
+
+
+                        {/* Download Button */}
+                        {/* <div className="flex justify-center sm:justify-start">
+                            <motion.button
+                                onClick={handleDownloadResume}
                                 onMouseEnter={() => setIsHovered(true)}
                                 onMouseLeave={() => setIsHovered(false)}
-                                className="bg-blue-600 text-sm flex items-center gap-3 px-3 py-3 rounded-lg text-white  font-semibold shadow-md hover:bg-blue-700 transition-all duration-300 hover:shadow-lg hover:scale-105"
+                                className="bg-gray-900 text-white px-5 py-2.5 rounded-lg text-sm font-medium flex items-center gap-2 hover:bg-gray-800 transition-all duration-300"
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                                variants={jumpVariants}
                             >
                                 <span>Download Resume</span>
-                                <IoMdCloudDownload className={`text-2xl transition-transform duration-300 ${isHovered ? 'translate-y-1' : ''}`} />
-                            </button>
-                        </div>
-                    </div>
+                                <IoMdCloudDownload className={`text-xl transition-transform duration-300 ${isHovered ? 'translate-y-1' : ''}`} />
+                            </motion.button>
+                        </div> */}
+                    </motion.div>
                 </div>
-            </div>
-            <style jsx>{`
-                @keyframes fadeIn {
-                    from {
-                        opacity: 0;
-                        transform: translateY(-10px);
-                    }
-                    to {
-                        opacity: 1;
-                        transform: translateY(0);
-                    }
-                }
-                @keyframes fadeInDelay {
-                    from {
-                        opacity: 0;
-                        transform: translateY(10px);
-                    }
-                    to {
-                        opacity: 1;
-                        transform: translateY(0);
-                    }
-                }
-                @keyframes slideInLeft {
-                    from {
-                        opacity: 0;
-                        transform: translateX(-30px);
-                    }
-                    to {
-                        opacity: 1;
-                        transform: translateX(0);
-                    }
-                }
-                @keyframes slideInRight {
-                    from {
-                        opacity: 0;
-                        transform: translateX(30px);
-                    }
-                    to {
-                        opacity: 1;
-                        transform: translateX(0);
-                    }
-                }
-                @keyframes slideUp {
-                    from {
-                        opacity: 0;
-                        transform: translateY(20px);
-                    }
-                    to {
-                        opacity: 1;
-                        transform: translateY(0);
-                    }
-                }
-                .animate-fadeIn {
-                    animation: fadeIn 0.8s ease-out;
-                }
-                .animate-fadeInDelay {
-                    animation: fadeInDelay 0.8s ease-out 0.4s backwards;
-                }
-                .animate-slideInLeft {
-                    animation: slideInLeft 0.8s ease-out 0.2s backwards;
-                }
-                .animate-slideInRight {
-                    animation: slideInRight 0.8s ease-out 0.3s backwards;
-                }
-                .animate-slideUp {
-                    animation: slideUp 0.8s ease-out 0.5s backwards;
-                }
-            `}</style>
-        </div>
+            </motion.div>
+        </motion.div>
     );
 }
 
