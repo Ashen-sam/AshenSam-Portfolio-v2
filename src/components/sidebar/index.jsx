@@ -21,7 +21,7 @@ export const Sidebar = () => {
     const handleDownload = () => {
         setIsDownloading(true);
         const link = document.createElement('a');
-        link.href = '/path-to-your-resume.pdf';
+        link.href = '/public/Ashen Samarasekera - Resume - Software Engineer .pdf';
         link.download = 'Ashen-Samarasekera-Resume.pdf';
         link.click();
         setTimeout(() => setIsDownloading(false), 600);
