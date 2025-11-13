@@ -12,11 +12,11 @@ export const Sidebar = () => {
     const { theme } = useTheme()
 
     const socialLinks = [
-        { icon: <FaWhatsapp />, href: 'https://wa.me/0774728548', label: 'WhatsApp', color: 'hover:bg-green-500' },
+        { icon: <FaWhatsapp />, label: 'WhatsApp', color: 'hover:bg-green-500' },
         { icon: <FaFacebookF />, href: 'https://www.facebook.com/profile.php?id=100078837497114', label: 'Facebook', color: 'hover:bg-blue-600' },
         { icon: <FaLinkedinIn />, href: 'https://www.linkedin.com/in/ashen-samarasekera-08354a249/', label: 'LinkedIn', color: 'hover:bg-blue-700' },
         { icon: <FaGithub />, href: 'https://github.com/Ashen-sam', label: 'GitHub', color: 'hover:bg-gray-800' },
-        { icon: <HiMail />, href: 'mailto:iamashen27@gmail.com', label: 'Email', color: 'hover:bg-red-500' },
+        { icon: <HiMail />, label: 'Email', color: 'hover:bg-red-500' },
     ];
 
     const handleDownload = () => {
@@ -45,7 +45,7 @@ export const Sidebar = () => {
 
     return (
         <motion.div
-            className="fixed left-0 top-1/3 -translate-y-1/2 z-50"
+            className="fixed left-0 top-1/4 -translate-y-1/2 z-50"
             variants={sidebarVariants}
             initial="hidden"
             animate="visible"
@@ -66,15 +66,14 @@ export const Sidebar = () => {
                         >
                             <span className="text-lg">{link.icon}</span>
                             {!isExpanded && (
-                                <span className="absolute left-full ml-2 px-3 py-1.5 bg-gray-900 text-white text-xs rounded-lg opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity whitespace-nowrap">
-                                    {link.label}
+                                <span className="absolute left-full ml-2 px-3 py-1.5 bg-gray-700 text-white text-xs rounded-lg opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity whitespace-nowrap">
+                                    {link.label == 'Email' ? 'iamashen27@gmail.com' : link.label == "WhatsApp" ? "+94 774 728 548" : link.label}
                                 </span>
                             )}
                         </a>
                     ))}
                 </div>
 
-                {/* Download Resume Button */}
                 <div className={`border-t border-gray-200 ${theme.primary} `}>
                     <motion.a
                         onClick={handleDownload}

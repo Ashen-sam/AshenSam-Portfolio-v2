@@ -3,14 +3,27 @@ import { useState } from "react";
 import { BiLogoTailwindCss } from "react-icons/bi";
 import { BsAndroid2 } from "react-icons/bs";
 import { DiJavascript1 } from "react-icons/di";
-import { FaArrowRight, FaCss3, FaHtml5, FaJava, FaReact } from "react-icons/fa";
+import { FaArrowRight, FaCss3, FaHtml5, FaJava, FaJs, FaPython, FaReact } from "react-icons/fa";
 import image1 from '../../../public/Screenshot 2025-11-13 084737.png'
 import image2 from '../../../public/Screenshot 2025-11-13 085928.png'
+import image4 from '../../../public/cab.png'
+import image8 from '../../../public/image8.png'
+import image9 from '../../../public/image9.png'
+import image10 from '../../../public/image10.png'
+import image7 from '../../../public/image7.png'
+import image6 from '../../../public/image6.png'
+import image11 from '../../../public/image11.png'
+import image12 from '../../../public/image12.png'
+
+
+
+
 import {
     SiAzuredevops,
     SiCsharp,
     SiCss3,
     SiDotnet,
+    SiFramer,
     SiGithub,
     SiHtml5,
     SiJavascript,
@@ -29,8 +42,10 @@ import {
     SiVercel,
 } from "react-icons/si";
 import { TbSql } from "react-icons/tb";
+import { useTheme } from "../ThemeContext";
 
 export default function Projects() {
+    const { theme } = useTheme()
     const [activeTechStack, setActiveTechStack] = useState(null);
 
     const techIcons = [
@@ -75,8 +90,9 @@ export default function Projects() {
             id: 2,
             title: "Rainfall Prediction AI Model",
             description: "Machine learning model developed in Google Colab using XGBoost, Random Forest, Decision Tree, and NLP features to predict rainfall with optimized accuracy.",
-            icons: [<FaJava />],
+            icons: [<FaPython />, <FaHtml5 />, <FaCss3 />, <FaJs />],
             tags: ["Machine Learning", "AI"],
+            image: image11,
             link: 'https://github.com/Ashen-sam/rainfall-prediction-model'
         },
         {
@@ -85,6 +101,7 @@ export default function Projects() {
             description: "Web-based application enabling customers to book vehicles, drivers to manage trips, and admins to oversee operations. Built with JSP, Servlets, and MySQL on Apache Tomcat.",
             icons: [<FaJava />, <SiMysql />, <FaHtml5 />, <FaCss3 />],
             tags: ["Full Stack", "Enterprise"],
+            image: image4,
             link: 'https://github.com/Ashen-sam/java-web-mega-city-cab'
         },
         {
@@ -109,6 +126,7 @@ export default function Projects() {
             description: "Modern railway travel experience platform integrating .NET technology stack with React.js and Tailwind CSS for smooth and scalable user interactions.",
             icons: [<FaReact />, <BiLogoTailwindCss />, <SiDotnet />, <SiMicrosoftsqlserver />],
             tags: ["Full Stack", "Modern Web"],
+            image: image10,
             link: ''
         },
         {
@@ -125,6 +143,7 @@ export default function Projects() {
             description: "First mobile application project with two user types: customers and pet-care providers. Offers practical pet care service management built with Java and SQL.",
             icons: [<BsAndroid2 />, <FaJava />, <TbSql />],
             tags: ["Mobile", "First Project"],
+            image: image7,
             link: 'https://github.com/Ashen-sam/PET-CARE-APP'
         },
         {
@@ -133,6 +152,7 @@ export default function Projects() {
             description: "GUI desktop application for cashier, manager, and product/stock management operations. Developed using Java and Java Swing with focus on functionality.",
             icons: [<FaJava />],
             tags: ["Desktop", "Management"],
+            image: image9,
             link: "https://github.com/Ashen-sam/APPPLE-ISTORES"
         },
         {
@@ -142,6 +162,7 @@ export default function Projects() {
             icons: [<FaReact />, <FaCss3 />],
             tags: ["Portfolio", "React"],
             site: true,
+            image: image12,
             link: 'https://github.com/Ashen-sam/SAM-PORTFOLIO'
         },
         {
@@ -151,6 +172,7 @@ export default function Projects() {
             icons: [<FaHtml5 />, <FaCss3 />, <DiJavascript1 />],
             tags: ["Responsive", "First Web Project"],
             site: true,
+            image: image6,
             site_link: 'https://ashen-sam.github.io/TEAM-TECH-TRONICLES/',
             link: "https://github.com/Ashen-sam/TEAM-TECH-TRONICLES"
         },
@@ -158,14 +180,13 @@ export default function Projects() {
             id: 12,
             title: "Portfolio v2",
             description: "Enhanced personal portfolio website showcasing projects, skills, and professional experience with modern design and improved user experience.",
-            icons: [<FaReact />, <BiLogoTailwindCss />],
+            icons: [<FaReact />, <BiLogoTailwindCss />, <SiFramer />],
             tags: ["Portfolio", "Current"],
+            image: image8,
             link: 'https://github.com/Ashen-sam/final-Project'
         }
-        // Add other projects here...
     ];
 
-    // Container variants for staggered scroll animation
     const containerVariants = {
         hidden: {},
         visible: {
@@ -175,7 +196,6 @@ export default function Projects() {
         },
     };
 
-    // Card animation: slide up + fade in
     const cardVariants = {
         hidden: { opacity: 0, y: 50 },
         visible: {
@@ -190,7 +210,7 @@ export default function Projects() {
             className="pb-16"
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
+            viewport={{ once: false, amount: 0 }}
             variants={containerVariants}
         >
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mt-10">
@@ -198,7 +218,7 @@ export default function Projects() {
                     className="my-10 flex flex-wrap  items-center justify-center mx-auto"
                     initial="hidden"
                     whileInView="visible"
-                    viewport={{ once: true }}
+                    viewport={{ once: false, amount: 0 }}
                     variants={containerVariants}
                 >
                     {techIcons.map((icon, idx) => (
@@ -212,14 +232,12 @@ export default function Projects() {
                     ))}
                 </motion.div>
 
-                {/* My Work Section */}
                 <motion.div
                     variants={cardVariants}
                     className="flex items-center "
                 >
-                    {/* My Work Box */}
                     <motion.div
-                        className="bg-gray-800 text-white px-4 py-2 rounded-t-lg flex items-center justify-center"
+                        className="bg-gray-700 text-white px-4 py-2 rounded-t-lg flex items-center justify-center"
                         whileHover={{ scale: 1.05 }}
                         transition={{ type: "spring", stiffness: 300 }}
                     >
@@ -231,7 +249,6 @@ export default function Projects() {
 
                 </motion.div>
 
-                {/* Projects Grid */}
                 <div className="p-6 mx-auto bg-white rounded-2xl rounded-tl-none shadow-sm border border-gray-200">
                     <motion.div className="grid grid-cols-1 md:grid-cols-3 gap-6" variants={containerVariants}>
                         {projects.map((project) => (
@@ -241,31 +258,28 @@ export default function Projects() {
                                 variants={cardVariants}
                                 whileHover={{ scale: 1.05 }}
                             >
-                                {/* Project Image */}
                                 <div className="relative h-48 bg-gray-200 overflow-hidden">
                                     {project.image ? <img
                                         src={project.image}
                                         alt={project.title}
-                                        className="w-full h-full object-center group-hover:scale-105 transition-transform duration-500"
+                                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                                     /> : (
                                         <div className="flex flex-col justify-center items-center min-h-[200px] text-gray-700 text-lg font-medium italic">
 
-                                            {/* Animated Text */}
                                             <motion.div
                                                 className="mb-4"
                                                 initial={{ opacity: 0, y: -10 }}
                                                 animate={{ opacity: 1, y: 0 }}
                                                 transition={{ duration: 0.8 }}
                                             >
-                                                Images are In Development
+                                                Images are In Development.<br /> Sorry guys!
                                             </motion.div>
 
-                                            {/* Elegant Dots Loader */}
                                             <div className="flex space-x-2">
                                                 {[0, 1, 2].map((i) => (
                                                     <motion.span
                                                         key={i}
-                                                        className="w-3 h-3 bg-gray-500 rounded-full"
+                                                        className={` w-3 h-3 bg-gray-500 rounded-full`}
                                                         animate={{ y: [0, -8, 0] }}
                                                         transition={{
                                                             duration: 0.6,
@@ -282,12 +296,10 @@ export default function Projects() {
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                                 </div>
 
-                                {/* Project Content */}
                                 <div className="p-6 relative">
                                     <h3 className="text-lg font-bold text-gray-900 mb-2">{project.title}</h3>
                                     <p className="text-sm text-gray-600 leading-relaxed mb-4 line-clamp-2">{project.description}</p>
 
-                                    {/* Tech Stack Icons (above card) */}
                                     <div className="flex items-center gap-2 text-white text-lg mb-4 absolute -top-8">
                                         {Array.isArray(project.icons)
                                             ? project.icons.map((icon, idx) => (
@@ -298,7 +310,6 @@ export default function Projects() {
                                             : project.icons}
                                     </div>
 
-                                    {/* View Project Link */}
                                     {project.link && (
                                         <a
                                             href={project.link}

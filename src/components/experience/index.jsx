@@ -1,9 +1,12 @@
 import { FaCalendarAlt } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import companyLogo from '../../../public/download.png';
+import { VscActivateBreakpoints } from 'react-icons/vsc';
+import { useTheme } from '../ThemeContext';
 
 const Experience = () => {
     // Variants for jump animation
+    const { theme } = useTheme()
     const jumpVariants = {
         hidden: { y: -300, opacity: 0 },
         visible: {
@@ -12,6 +15,7 @@ const Experience = () => {
             transition: { type: "spring", stiffness: 80, damping: 12 }
         }
     };
+
 
     return (
         <motion.div
@@ -27,7 +31,7 @@ const Experience = () => {
         >
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mt-10">
                 <motion.div
-                    className="bg-gray-800 w-[160px] p-2 text-white flex items-center justify-center rounded-t-lg"
+                    className="bg-gray-700 w-[160px] p-2 text-white flex items-center justify-center rounded-t-lg"
                     variants={jumpVariants}
                 >
                     My Experience
@@ -39,12 +43,12 @@ const Experience = () => {
                 >
                     <motion.div className="p-6 sm:p-8" variants={jumpVariants}>
                         <motion.div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-5" variants={jumpVariants}>
-                            <motion.div className="flex items-start gap-4  w-full" variants={jumpVariants}>
+                            <motion.div className="flex items-start  gap-4  w-full" variants={jumpVariants}>
                                 <motion.div className="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0" variants={jumpVariants}>
                                     <img src={companyLogo} alt="Expernetic Logo" className="w-10 h-10 object-contain" />
                                 </motion.div>
                                 <motion.div variants={jumpVariants} className='flex justify-between items-center md:flex-row flex-col w-full '>
-                                    <div><h3 className="text-xl font-bold text-gray-900 mb-1">Software Engineer Intern</h3>
+                                    <div><h3 className="text-xl font-bold text-gray-700 mb-1">Software Engineer Intern</h3>
                                         <p className="text-base text-gray-700 font-semibold mb-2">Expernetic Pvt Ltd</p></div>
                                     <div className="flex flex-wrap gap-2 text-sm text-gray-600">
                                         <div className="flex items-center gap-2">
@@ -65,15 +69,17 @@ const Experience = () => {
                         </motion.div>
 
                         <motion.div className="mb-5" variants={jumpVariants}>
-                            <h4 className="text-base font-bold text-gray-900 mb-3">Key Responsibilities</h4>
+                            <h4 className="text-base font-bold text-gray-700 mb-3">Key Responsibilities</h4>
                             <div className="space-y-2">
                                 {[
                                     "Developed responsive user interfaces using React, Next.js, TypeScript, and modern frontend technologies",
                                     "Participated in Agile Scrum ceremonies and collaborated with cross-functional teams",
                                     "Applied SOLID principles and UI/UX best practices to deliver maintainable, scalable solutions"
                                 ].map((res, i) => (
-                                    <motion.div key={i} className="flex items-start gap-3" variants={jumpVariants}>
-                                        <div className="w-1.5 h-1.5 bg-gray-900 rounded-full mt-2 flex-shrink-0"></div>
+                                    <motion.div key={i} className="flex items-center gap-3" variants={jumpVariants}>
+                                        <div>
+                                            <VscActivateBreakpoints className={`${theme.secondary} text-xs`} />
+                                        </div>
                                         <p className="text-sm text-gray-700">{res}</p>
                                     </motion.div>
                                 ))}
@@ -81,10 +87,10 @@ const Experience = () => {
                         </motion.div>
 
                         <motion.div variants={jumpVariants}>
-                            <h4 className="text-base font-bold text-gray-900 mb-3">Technologies & Tools</h4>
+                            <h4 className="text-base font-bold text-gray-700 mb-3">Technologies & Tools</h4>
                             <div className="flex flex-wrap gap-2">
                                 {["React", "Next.js", "TypeScript", "Redux & RTK Query", "Tailwind CSS", "Agile/Scrum", "MUI", "Azure Devops"].map((tech, i) => (
-                                    <span key={i} className="px-3 py-1.5 bg-gray-100 text-gray-700 rounded-lg text-xs font-medium">{tech}</span>
+                                    <span key={i} className="border  border-gray-200 px-2 bg-slate-50 shadow-sm py-1 text-xs rounded-lg">{tech}</span>
                                 ))}
                             </div>
                         </motion.div>
