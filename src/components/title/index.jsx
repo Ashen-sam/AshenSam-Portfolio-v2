@@ -76,7 +76,7 @@ const AboutMe = () => {
                 className="bg-gray-800 w-[100px] p-2 text-white flex items-center justify-center rounded-t-lg "
                 variants={jumpVariants}
             >
-                Hi Friends
+                Hi There
             </motion.div>
 
             {/* Profile Card */}

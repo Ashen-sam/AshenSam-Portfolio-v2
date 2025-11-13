@@ -24,7 +24,7 @@ const ThemeContext = createContext();
 
 // Provider component
 export const ThemeProvider = ({ children }) => {
-    const [themeName, setThemeName] = useState("red"); // default theme
+    const [themeName, setThemeName] = useState("orange"); // default theme
 
     const switchTheme = (name) => {
         if (themes[name]) setThemeName(name);

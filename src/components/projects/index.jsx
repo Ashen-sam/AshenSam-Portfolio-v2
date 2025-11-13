@@ -4,6 +4,8 @@ import { BiLogoTailwindCss } from "react-icons/bi";
 import { BsAndroid2 } from "react-icons/bs";
 import { DiJavascript1 } from "react-icons/di";
 import { FaArrowRight, FaCss3, FaHtml5, FaJava, FaReact } from "react-icons/fa";
+import image1 from '../../../public/Screenshot 2025-11-13 084737.png'
+import image2 from '../../../public/Screenshot 2025-11-13 085928.png'
 import {
     SiAzuredevops,
     SiCsharp,
@@ -57,7 +59,7 @@ export default function Projects() {
             description: "A collaborative web app that lets users create and manage projects, assign tasks, comment, react/like, and follow progress in real time.",
             icons: [<SiReact />, <SiSupabase />, <SiShadcnui />, <SiRedux />, <SiCsharp />],
             tags: ["Full Stack", "Project Management"],
-            image: '../../../public/Screenshot 2025-11-13 084737.png',
+            image: image1,
             link: 'https://github.com/Ashen-sam/pro-app-api-net'
         },
         {
@@ -66,7 +68,7 @@ export default function Projects() {
             description: "Final year project - A web application for Makola residents to report local issues efficiently. Features real-time updates, secure authentication, and location-based reporting with photo uploads.",
             icons: [<SiNextdotjs />, <SiSupabase />, <SiRedux />, <BiLogoTailwindCss />],
             tags: ["Final Year Project", "Full Stack"],
-            image: '../../../public/Screenshot 2025-11-13 085928.png',
+            image: image2,
             link: 'https://github.com/Ashen-sam/makola-web-application'
         },
         {
@@ -193,7 +195,7 @@ export default function Projects() {
         >
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mt-10">
                 <motion.div
-                    className="my-10 flex gap-4 items-center mx-auto justify-center"
+                    className="my-10 flex flex-wrap  items-center justify-center mx-auto"
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true }}
@@ -202,13 +204,14 @@ export default function Projects() {
                     {techIcons.map((icon, idx) => (
                         <motion.div
                             key={idx}
-                            className="text-3xl "
+                            className="text-3xl flex justify-center items-center w-16 h-16"
                             variants={cardVariants}
                         >
                             {icon}
                         </motion.div>
                     ))}
                 </motion.div>
+
                 {/* My Work Section */}
                 <motion.div
                     variants={cardVariants}

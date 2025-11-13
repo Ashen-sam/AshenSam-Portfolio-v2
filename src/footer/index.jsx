@@ -1,6 +1,5 @@
-import { FaReact, FaGithub, FaLinkedin } from "react-icons/fa";
-import { SiVite, SiTailwindcss, SiFramer } from "react-icons/si";
-import { FaWhatsapp } from "react-icons/fa";
+import { FaReact } from "react-icons/fa";
+import { SiFramer, SiTailwindcss, SiVite } from "react-icons/si";
 
 const Footer = () => {
     const currentYear = new Date().getFullYear();
@@ -14,7 +13,7 @@ const Footer = () => {
                     {/* Name & Title */}
                     <div className="text-center md:text-left">
                         <h2 className="text-gray-900 text-xl font-bold mb-1">Ashen Sam</h2>
-                        <p className="text-gray-500 text-sm">Software Engineer | Full Stack Developer</p>
+                        <p className="text-gray-500 text-sm">Software Engineer | Developer</p>
                     </div>
 
 
