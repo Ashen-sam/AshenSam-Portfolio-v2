@@ -4,6 +4,7 @@ import { FaFacebookF, FaFileDownload, FaGithub, FaLinkedinIn, FaWhatsapp } from 
 import { HiMail } from 'react-icons/hi';
 import { useTheme } from '../ThemeContext';
 import { ThemeSwitcher } from '../ThemeSwitcher';
+import resume from '../../../public/Ashen Samarasekera - Resume - Software Engineer .pdf'
 
 export const Sidebar = () => {
     const [isExpanded, setIsExpanded] = useState(false);
@@ -21,7 +22,7 @@ export const Sidebar = () => {
     const handleDownload = () => {
         setIsDownloading(true);
         const link = document.createElement('a');
-        link.href = '/public/Ashen Samarasekera - Resume - Software Engineer .pdf';
+        link.href = resume;
         link.download = 'Ashen-Samarasekera-Resume.pdf';
         link.click();
         setTimeout(() => setIsDownloading(false), 600);
