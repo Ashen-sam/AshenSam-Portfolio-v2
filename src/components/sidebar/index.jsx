@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import { useEffect, useState } from 'react';
 import {
     FaBars,
     FaFacebookF,
@@ -10,33 +9,15 @@ import {
 } from 'react-icons/fa';
 import { HiMail } from 'react-icons/hi';
 import { IoLogoWhatsapp } from 'react-icons/io';
-import resume from '../../../public/Ashen Samarasekera - Resume - Software Engineer .pdf';
 import { useTheme } from '../ThemeContext';
 import { ThemeSwitcher } from '../ThemeSwitcher';
+import { useSidebar } from '../hooks/useSidebar';
 
 export const Sidebar = () => {
-    const [isExpanded, setIsExpanded] = useState(true);
-    const [isDownloading, setIsDownloading] = useState(false);
-    const { theme } = useTheme();
-
-    // Collapse by default on small devices
-    useEffect(() => {
-        const handleResize = () => {
-            if (window.innerWidth < 640) {
-                setIsExpanded(false);
-            } else {
-                setIsExpanded(true);
-            }
-        };
-        handleResize();
-        window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResize);
-    }, []);
-
-    const toggleSidebar = () => {
-        setIsExpanded((prev) => !prev);
-    };
-
+    const {
+        handleDownload, isDownloading, isExpanded, sidebarVariants, toggleSidebar
+    } = useSidebar()
+    const { theme } = useTheme()
     const socialLinks = [
         { icon: <IoLogoWhatsapp />, href: 'https://wa.me/0774728548', label: 'WhatsApp', color: 'hover:bg-green-500' },
         { icon: <FaFacebookF />, href: 'https://www.facebook.com/profile.php?id=100078837497114', label: 'Facebook', color: 'hover:bg-blue-600' },
@@ -44,33 +25,8 @@ export const Sidebar = () => {
         { icon: <FaGithub />, href: 'https://github.com/Ashen-sam', label: 'GitHub', color: 'hover:bg-gray-800' },
         { icon: <HiMail />, href: 'mailto:iamashen27@gmail.com', label: 'Email', color: 'hover:bg-red-500' },
     ];
-
-    const handleDownload = () => {
-        setIsDownloading(true);
-        const link = document.createElement('a');
-        link.href = resume;
-        link.download = 'Ashen-Samarasekera-Resume.pdf';
-        link.click();
-        setTimeout(() => setIsDownloading(false), 600);
-    };
-
-    const sidebarVariants = {
-        hidden: { x: -100, opacity: 0 },
-        visible: {
-            x: 0,
-            opacity: 1,
-            transition: {
-                type: 'spring',
-                stiffness: 60,
-                damping: 12,
-                duration: 0.8,
-            },
-        },
-    };
-
     return (
         <>
-            {/* Toggle button for small screens */}
             <button
                 onClick={toggleSidebar}
                 className="sm:hidden fixed top-4 right-40 z-[60] p-2 rounded-xl bg-white shadow-sm border border-gray-200 hover:bg-gray-100 transition"

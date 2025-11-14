@@ -1,23 +1,18 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
 import { BiLogoTailwindCss } from "react-icons/bi";
 import { BsAndroid2 } from "react-icons/bs";
 import { DiJavascript1 } from "react-icons/di";
 import { FaArrowRight, FaCss3, FaHtml5, FaJava, FaJs, FaPython, FaReact } from "react-icons/fa";
-import image1 from '../../../public/Screenshot 2025-11-13 084737.png'
-import image2 from '../../../public/Screenshot 2025-11-13 085928.png'
-import image4 from '../../../public/cab.png'
-import image8 from '../../../public/image8.png'
-import image9 from '../../../public/image9.png'
-import image10 from '../../../public/image10.png'
-import image7 from '../../../public/image7.png'
-import image6 from '../../../public/image6.png'
-import image11 from '../../../public/image11.png'
-import image12 from '../../../public/image12.png'
-
-
-
-
+import image1 from '../../../public/Screenshot 2025-11-13 084737.png';
+import image2 from '../../../public/Screenshot 2025-11-13 085928.png';
+import image4 from '../../../public/cab.png';
+import image10 from '../../../public/image10.png';
+import image11 from '../../../public/image11.png';
+import image12 from '../../../public/image12.png';
+import image6 from '../../../public/image6.png';
+import image7 from '../../../public/image7.png';
+import image8 from '../../../public/image8.png';
+import image9 from '../../../public/image9.png';
 import {
     SiAzuredevops,
     SiCsharp,
@@ -42,25 +37,25 @@ import {
     SiVercel,
 } from "react-icons/si";
 import { TbSql } from "react-icons/tb";
-import { useTheme } from "../ThemeContext";
+import { UseProjects } from "../hooks/useProjects";
 
 export default function Projects() {
-    const { theme } = useTheme()
-    const [activeTechStack, setActiveTechStack] = useState(null);
+
+    const { cardVariants, containerVariants } = UseProjects()
 
     const techIcons = [
-        <SiReact color="#61DAFB" />,       // React blue
-        <SiTypescript color="#3178C6" />,   // TypeScript blue
-        <SiTailwindcss color="#38B2AC" />,  // Tailwind cyan
-        <SiRedux color="#764ABC" />,        // Redux purple
-        <SiSupabase color="#3ECF8E" />,     // Supabase green
-        <SiShadcnui color="#000000" />,     // Example orange for Shadcn (no official color)
-        <SiJavascript color="#F7DF1E" />,   // JavaScript yellow
-        <SiHtml5 color="#E34F26" />,        // HTML orange
-        <SiCss3 color="#1572B6" />,         // CSS blue
-        <SiPostman color="#FF6C37" />,      // Postman orange
-        <FaJava color="#007396" />,         // Java blue
-        <SiNextdotjs color="#000000" />,    // Next.js black
+        <SiReact color="#61DAFB" />,
+        <SiTypescript color="#3178C6" />,
+        <SiTailwindcss color="#38B2AC" />,
+        <SiRedux color="#764ABC" />,
+        <SiSupabase color="#3ECF8E" />,
+        <SiShadcnui color="#000000" />,
+        <SiJavascript color="#F7DF1E" />,
+        <SiHtml5 color="#E34F26" />,
+        <SiCss3 color="#1572B6" />,
+        <SiPostman color="#FF6C37" />,
+        <FaJava color="#007396" />,
+        <SiNextdotjs color="#000000" />,
         <SiMui color="#007FFF" />,
         <SiGithub color="#764ABC" />,
         <SiAzuredevops color="#007FFF" />,
@@ -187,23 +182,7 @@ export default function Projects() {
         }
     ];
 
-    const containerVariants = {
-        hidden: {},
-        visible: {
-            transition: {
-                staggerChildren: 0.2,
-            },
-        },
-    };
 
-    const cardVariants = {
-        hidden: { opacity: 0, y: 50 },
-        visible: {
-            opacity: 1,
-            y: 0,
-            transition: { type: "spring", stiffness: 80, damping: 12 },
-        },
-    };
 
     return (
         <motion.div

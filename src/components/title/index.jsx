@@ -1,63 +1,13 @@
-import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
-import ProfileImage from "../../../public/IMG_6579-removebg-preview.png";
-import ResumePDF from "../../../public/Ashen Samarasekera Resume Software Engineer.pdf";
-import { useTheme } from "../ThemeContext";
+import { AnimatePresence, motion } from "framer-motion";
 import { BiDownArrow, BiUpArrow } from "react-icons/bi";
 import { VscActivateBreakpoints } from "react-icons/vsc";
+import ProfileImage from "../../../public/IMG_6579-removebg-preview.png";
+import { useTheme } from "../ThemeContext";
+import { UseTitle } from "../hooks/useTitle";
 
 const AboutMe = () => {
-    const [showQuotes, setShowQuotes] = useState(false);
     const { theme } = useTheme();
-
-    const handleDownloadResume = () => {
-        const link = document.createElement("a");
-        link.href = ResumePDF;
-        link.download = "Ashen_Samarasekera_Resume.pdf";
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-    };
-
-    // Entrance animation for sections
-    const jumpVariants = {
-        hidden: { y: -100, opacity: 0 },
-        visible: {
-            y: 0,
-            opacity: 1,
-            transition: { type: "spring", stiffness: 80, damping: 12 },
-        },
-    };
-
-    // Floating and glowing animations
-    const floatingVariants = {
-        animate: {
-            y: [0, -10, 0, 10, 0],
-            rotate: [0, 1, -1, 1, 0],
-            transition: {
-                duration: 6,
-                repeat: Infinity,
-                ease: "easeInOut",
-            },
-        },
-    };
-
-    const pulseVariants = () => ({
-        animate: {
-            transition: {
-                duration: 3,
-                repeat: Infinity,
-                ease: "easeInOut",
-            },
-        },
-    });
-
-    const tags = [
-        "✦ Web Development",
-        "✦ Software Engineering",
-        "✦ Innovation",
-        "✦ Vibe Coding",
-    ];
+    const { floatingVariants, jumpVariants, pulseVariants, tags, setShowQuotes, showQuotes } = UseTitle()
 
     return (
         <motion.div
@@ -71,7 +21,6 @@ const AboutMe = () => {
                 },
             }}
         >
-            {/* Greeting */}
             <motion.div
                 className="bg-gray-700 w-[100px] p-2 text-white flex items-center justify-center rounded-t-lg"
                 variants={jumpVariants}
@@ -79,13 +28,11 @@ const AboutMe = () => {
                 Hi There
             </motion.div>
 
-            {/* Profile Card */}
             <motion.div
                 className="bg-white rounded-2xl rounded-tl-none border border-gray-200 shadow-sm p-8 pb-0"
                 variants={jumpVariants}
             >
                 <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6 h-max">
-                    {/* Profile Image */}
                     <motion.div
                         className={`flex-shrink-0 rounded-2xl ${theme.primary}`}
                         variants={floatingVariants}
@@ -104,7 +51,6 @@ const AboutMe = () => {
                         </motion.div>
                     </motion.div>
 
-                    {/* Info Section */}
                     <motion.div
                         className="flex-1 text-center sm:text-left"
                         variants={jumpVariants}
@@ -128,7 +74,6 @@ const AboutMe = () => {
                             projects.
                         </motion.p>
 
-                        {/* Tags */}
                         <motion.div
                             className="flex flex-wrap justify-center sm:justify-start gap-2 items-center mb-6"
                             initial="hidden"
@@ -164,7 +109,6 @@ const AboutMe = () => {
                 </div>
             </motion.div>
 
-            {/* Toggle Button */}
             <div className="flex justify-center mt-4 cursor-pointer">
                 <motion.div
                     animate={{
@@ -179,7 +123,6 @@ const AboutMe = () => {
                 </motion.div>
             </div>
 
-            {/* Animated Expand/Collapse Section */}
             <AnimatePresence initial={false}>
                 {showQuotes && (
                     <motion.div

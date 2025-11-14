@@ -12,16 +12,13 @@ const App = () => {
   const [showSplash, setShowSplash] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => setShowSplash(false), 2000); // 2 seconds
+    const timer = setTimeout(() => setShowSplash(false), 2000);
     return () => clearTimeout(timer);
   }, []);
 
   return (
     <ThemeProvider>
       <div className="relative min-h-screen overflow-hidden">
-
-
-
         <AnimatePresence mode="wait">
           {showSplash && (
             <motion.div
@@ -79,7 +76,6 @@ const App = () => {
 
         {!showSplash && (
           <>
-            {/* Animated background */}
             <motion.div animate={{
 
             }} className=" top-4 text-xs fixed right-8  shadow-sm border p-2 rounded-xl bg-white  z-10   font-medium ">
