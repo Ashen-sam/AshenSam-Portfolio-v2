@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import resume from '../../../public/resume.pdf';
+import resume from '../../../public/Ashen-Samarasekera-Resume.pdf';
 
 export const useSidebar = () => {
     const [isExpanded, setIsExpanded] = useState(true);
