@@ -38,10 +38,12 @@ import {
 } from "react-icons/si";
 import { TbSql } from "react-icons/tb";
 import { UseProjects } from "../hooks/useProjects";
+import { useTheme } from "../ThemeContext";
 
 export default function Projects() {
 
     const { cardVariants, containerVariants } = UseProjects()
+    const { theme } = useTheme()
 
     const techIcons = [
         <SiReact color="#61DAFB" />,
@@ -272,7 +274,7 @@ export default function Projects() {
 
                                         </div>
                                     )}
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                                    <div className={`absolute inset-0 bg-gradient-to-t from-black/20  to-transparent`}></div>
                                 </div>
 
                                 <div className="p-3 relative">

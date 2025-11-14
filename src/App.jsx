@@ -7,6 +7,7 @@ import { ThemeProvider } from "./components/ThemeContext";
 import AboutMe from "./components/title";
 import Footer from "./footer";
 import pageLogo from '../public/logo3.png'
+import SmoothScroll from "./components/SmoothScroll";
 
 const App = () => {
   const [showSplash, setShowSplash] = useState(true);
@@ -18,6 +19,8 @@ const App = () => {
 
   return (
     <ThemeProvider>
+      <SmoothScroll />
+
       <div className="relative min-h-screen overflow-hidden">
         <AnimatePresence mode="wait">
           {showSplash && (
