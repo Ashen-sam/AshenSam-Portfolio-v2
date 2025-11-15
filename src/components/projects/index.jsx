@@ -198,7 +198,7 @@ export default function Projects() {
             className="pb-16"
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: false, amount: 0 }}
+            viewport={{ once: true, amount: 0 }}
             variants={containerVariants}
         >
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mt-10">
@@ -206,7 +206,7 @@ export default function Projects() {
                     className="my-10 flex flex-wrap  items-center justify-center mx-auto"
                     initial="hidden"
                     whileInView="visible"
-                    viewport={{ once: false, amount: 0 }}
+                    viewport={{ once: true, amount: 0 }}
                     variants={containerVariants}
                 >
                     {techIcons.map((icon, idx) => (
