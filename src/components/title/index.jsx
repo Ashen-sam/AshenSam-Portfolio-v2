@@ -10,9 +10,9 @@ const AboutMe = () => {
     const { floatingVariants, jumpVariants, pulseVariants, tags, setShowQuotes, showQuotes } = UseTitle()
     const stats = [
         { label: "Age", value: 24 },
-        { label: "Projects(Pe & Ac)", value: "15+" },
+        { label: "Projects(Pe & Ac)", value: "15" },
         { label: "Industry Experience", value: "1" },
-        { label: "Development Experience", value: "2+" },
+        { label: "Development Experience", value: "2" },
     ];
 
     return (
@@ -158,7 +158,40 @@ const AboutMe = () => {
                                     whileHover={{ scale: 1.05 }}
                                 >
                                     <div className={`sm:text-6xl text-4xl font-bold text-[${theme.secondary}]`}>
-                                        {stat.value}
+                                        {stat.value == "15" ? (
+                                            <div className="flex items-center justify-center">
+                                                <div>15</div>
+                                                <motion.div
+                                                    initial={{ rotate: 0 }}
+                                                    animate={{ rotate: 360 }}
+                                                    transition={{
+                                                        duration: 1.5,
+                                                        ease: "easeInOut",
+                                                    }}
+                                                    className="inline-block ml-1"
+                                                >
+                                                    +
+                                                </motion.div>
+                                            </div>
+                                        ) : stat.value == 2 ? (
+                                            <div className="flex items-center justify-center">
+                                                <div>2</div>
+                                                <motion.div
+                                                    initial={{ rotate: 0 }}
+                                                    animate={{ rotate: 360 }}
+                                                    transition={{
+                                                        duration: 1.5,
+                                                        ease: "easeInOut",
+                                                    }}
+                                                    className="inline-block ml-1"
+                                                >
+                                                    +
+                                                </motion.div>
+                                            </div>
+                                        ) : (
+                                            stat.value
+                                        )}
+
                                     </div>
                                     <div className="text-gray-600 mt-2 font-medium">{stat.label}</div>
                                 </motion.div>
