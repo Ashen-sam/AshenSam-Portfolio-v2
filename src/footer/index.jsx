@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
 import { FaReact } from "react-icons/fa";
-import { SiFramer, SiTailwindcss, SiVite } from "react-icons/si";
+import { SiTailwindcss } from "react-icons/si";
 import { useTheme } from "../components/ThemeContext";
+import { TechIcons } from './../components/TechIcons';
 
 const Footer = () => {
     const currentYear = new Date().getFullYear();
@@ -59,9 +60,13 @@ const Footer = () => {
                         <span className="text-gray-500 text-sm">Developed with:</span>
                         <div className="flex items-center gap-3 text-2xl mt-1 md:mt-0">
                             <FaReact className="text-[#61DAFB] hover:scale-110 transition-transform" />
-                            <SiVite className="text-[#646CFF] hover:scale-110 transition-transform" />
+                            <div className="w-6">
+                                {TechIcons[2].svg}
+                            </div>
                             <SiTailwindcss className="text-[#38BDF8] hover:scale-110 transition-transform" />
-                            <SiFramer className="text-[#fbff03] hover:scale-110 transition-transform" />
+                            <div className="w-6">
+                                {TechIcons[19].svg}
+                            </div>
                         </div>
                     </motion.div>
                 </div>

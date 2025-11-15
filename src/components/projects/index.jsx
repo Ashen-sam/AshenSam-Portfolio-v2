@@ -1,10 +1,22 @@
 import { motion } from "framer-motion";
-import { BiLogoTailwindCss } from "react-icons/bi";
-import { BsAndroid2 } from "react-icons/bs";
-import { DiJavascript1 } from "react-icons/di";
-import { FaArrowRight, FaCss3, FaHtml5, FaJava, FaJs, FaPython, FaReact } from "react-icons/fa";
-import image1 from '../../../public/Screenshot 2025-11-13 084737.png';
-import image2 from '../../../public/Screenshot 2025-11-13 085928.png';
+import { FaArrowRight, FaJava } from "react-icons/fa";
+import {
+    SiAzuredevops,
+    SiCss3,
+    SiGithub,
+    SiHtml5,
+    SiJavascript,
+    SiMui,
+    SiNextdotjs,
+    SiPostman,
+    SiReact,
+    SiRedux,
+    SiShadcnui,
+    SiSupabase,
+    SiTailwindcss,
+    SiTypescript,
+    SiVercel
+} from "react-icons/si";
 import image4 from '../../../public/cab.png';
 import image10 from '../../../public/image10.png';
 import image11 from '../../../public/image11.png';
@@ -13,31 +25,10 @@ import image6 from '../../../public/image6.png';
 import image7 from '../../../public/image7.png';
 import image8 from '../../../public/image8.png';
 import image9 from '../../../public/image9.png';
-import {
-    SiAzuredevops,
-    SiCsharp,
-    SiCss3,
-    SiDotnet,
-    SiFramer,
-    SiGithub,
-    SiHtml5,
-    SiJavascript,
-    SiMicrosoftsqlserver,
-    SiMui,
-    SiMysql,
-    SiNextdotjs,
-    SiPhp,
-    SiPostman,
-    SiReact,
-    SiRedux,
-    SiShadcnui,
-    SiSupabase,
-    SiTailwindcss,
-    SiTypescript,
-    SiVercel,
-} from "react-icons/si";
-import { TbSql } from "react-icons/tb";
+import image1 from '../../../public/Screenshot 2025-11-13 084737.png';
+import image2 from '../../../public/Screenshot 2025-11-13 085928.png';
 import { UseProjects } from "../hooks/useProjects";
+import { TechIcons } from "../TechIcons";
 import { useTheme } from "../ThemeContext";
 
 export default function Projects() {
@@ -64,12 +55,13 @@ export default function Projects() {
         <SiVercel color="#000000" />
     ];
 
+
     const projects = [
         {
             id: 0,
             title: "Project Management Web App (ongoing)",
             description: "A collaborative web app that lets users create and manage projects, assign tasks, comment, react/like, and follow progress in real time.",
-            icons: [<SiReact />, <SiSupabase />, <SiShadcnui />, <SiRedux />, <SiCsharp />],
+            icons: [TechIcons[0].svg, TechIcons[1].svg, TechIcons[2].svg, TechIcons[3].svg, TechIcons[10].svg, TechIcons[11].svg, TechIcons[5].svg],
             tags: ["Full Stack", "Project Management"],
             image: image1,
             link: 'https://github.com/Ashen-sam/pro-app-api-net'
@@ -78,7 +70,8 @@ export default function Projects() {
             id: 1,
             title: "Community Issue Reporting Platform",
             description: "Final year project - A web application for Makola residents to report local issues efficiently. Features real-time updates, secure authentication, and location-based reporting with photo uploads.",
-            icons: [<SiNextdotjs />, <SiSupabase />, <SiRedux />, <BiLogoTailwindCss />],
+            icons: [TechIcons[9].svg, TechIcons[1].svg, TechIcons[11].svg, TechIcons[3].svg, TechIcons[10].svg],
+
             tags: ["Final Year Project", "Full Stack"],
             image: image2,
             link: 'https://github.com/Ashen-sam/makola-web-application'
@@ -87,7 +80,8 @@ export default function Projects() {
             id: 2,
             title: "Rainfall Prediction AI Model",
             description: "Machine learning model developed in Google Colab using XGBoost, Random Forest, Decision Tree, and NLP features to predict rainfall with optimized accuracy.",
-            icons: [<FaPython />, <FaHtml5 />, <FaCss3 />, <FaJs />],
+            icons: [TechIcons[6].svg, TechIcons[7].svg, TechIcons[8].svg, TechIcons[13].svg, TechIcons[15].svg],
+
             tags: ["Machine Learning", "AI"],
             image: image11,
             link: 'https://github.com/Ashen-sam/rainfall-prediction-model'
@@ -96,41 +90,58 @@ export default function Projects() {
             id: 3,
             title: "Megacity Cab Service",
             description: "Web-based application enabling customers to book vehicles, drivers to manage trips, and admins to oversee operations. Built with JSP, Servlets, and MySQL on Apache Tomcat.",
-            icons: [<FaJava />, <SiMysql />, <FaHtml5 />, <FaCss3 />],
+            icons: [TechIcons[6].svg, TechIcons[7].svg, TechIcons[8].svg, TechIcons[13].svg, TechIcons[14].svg],
+
             tags: ["Full Stack", "Enterprise"],
             image: image4,
             link: 'https://github.com/Ashen-sam/java-web-mega-city-cab'
         },
         {
-            id: 4,
-            title: "Store Inventory Management",
-            description: "Web application with Admin and Customer roles for efficient product, order, and inventory management. Developed using JSP, Servlets, and MySQL.",
-            icons: [<FaJava />, <SiMysql />, <FaHtml5 />],
-            tags: ["Full Stack", "Management System"],
-            link: 'https://github.com/Ashen-sam/store-inventory-management-web-app'
-        },
-        {
-            id: 5,
-            title: "Train Web Application",
-            description: "HND Final project - Railway booking and travel management system for Sri Lanka. Features train schedules, seat reservations, and booking management built with PHP and MySQL.",
-            icons: [<SiPhp />, <SiMysql />, <FaHtml5 />, <FaCss3 />],
-            tags: ["Final Project", "Full Stack"],
+            id: 12,
+            title: "Portfolio v2",
+            description: "Enhanced personal portfolio website showcasing projects, skills, and professional experience with modern design and improved user experience.",
+            icons: [TechIcons[0].svg, TechIcons[2].svg, TechIcons[4].svg, TechIcons[19].svg],
+
+            tags: ["Portfolio", "Current"],
+            image: image8,
             link: 'https://github.com/Ashen-sam/final-Project'
         },
         {
             id: 6,
             title: "Sri Lanka Railway Web",
             description: "Modern railway travel experience platform integrating .NET technology stack with React.js and Tailwind CSS for smooth and scalable user interactions.",
-            icons: [<FaReact />, <BiLogoTailwindCss />, <SiDotnet />, <SiMicrosoftsqlserver />],
+            icons: [TechIcons[0].svg, TechIcons[4].svg, TechIcons[2].svg, TechIcons[17].svg],
+
             tags: ["Full Stack", "Modern Web"],
             image: image10,
             link: ''
         },
         {
+            id: 4,
+            title: "Store Inventory Management",
+            description: "Web application with Admin and Customer roles for efficient product, order, and inventory management. Developed using JSP, Servlets, and MySQL.",
+            icons: [TechIcons[6].svg, TechIcons[7].svg, TechIcons[8].svg, TechIcons[13].svg, TechIcons[14].svg],
+
+            tags: ["Full Stack", "Management System"],
+            link: 'https://github.com/Ashen-sam/store-inventory-management-web-app'
+        },
+
+        {
+            id: 5,
+            title: "Train Web Application",
+            description: "HND Final project - Railway booking and travel management system for Sri Lanka. Features train schedules, seat reservations, and booking management built with PHP and MySQL.",
+            icons: [TechIcons[6].svg, TechIcons[7].svg, TechIcons[8].svg, TechIcons[16].svg, TechIcons[14].svg],
+
+            tags: ["Final Project", "Full Stack"],
+            link: 'https://github.com/Ashen-sam/final-Project'
+        },
+
+        {
             id: 7,
             title: "4You-Shop Web",
             description: "E-commerce platform with frontend implementation using HTML, CSS, and JavaScript, backed by PHP and MySQL for complete end-to-end web development.",
-            icons: [<FaHtml5 />, <FaCss3 />, <DiJavascript1 />, <SiPhp />],
+            icons: [TechIcons[6].svg, TechIcons[7].svg, TechIcons[8].svg, TechIcons[16].svg, TechIcons[14].svg],
+
             tags: ["E-commerce", "Full Stack"],
             link: "https://github.com/Ashen-sam/4You-shop"
         },
@@ -138,7 +149,8 @@ export default function Projects() {
             id: 8,
             title: "Pet Care Mobile App",
             description: "First mobile application project with two user types: customers and pet-care providers. Offers practical pet care service management built with Java and SQL.",
-            icons: [<BsAndroid2 />, <FaJava />, <TbSql />],
+            icons: [TechIcons[20].svg, TechIcons[13].svg, TechIcons[21].svg],
+
             tags: ["Mobile", "First Project"],
             image: image7,
             link: 'https://github.com/Ashen-sam/PET-CARE-APP'
@@ -147,7 +159,8 @@ export default function Projects() {
             id: 9,
             title: "Apple Store Desktop App",
             description: "GUI desktop application for cashier, manager, and product/stock management operations. Developed using Java and Java Swing with focus on functionality.",
-            icons: [<FaJava />],
+            icons: [TechIcons[13].svg, TechIcons[21].svg],
+
             tags: ["Desktop", "Management"],
             image: image9,
             link: "https://github.com/Ashen-sam/APPPLE-ISTORES"
@@ -156,7 +169,8 @@ export default function Projects() {
             id: 10,
             title: "Portfolio v1",
             description: "Personal web portfolio using React JS, pure CSS, Framer Motion, and React Icons. First React project showcasing development skills and projects.",
-            icons: [<FaReact />, <FaCss3 />],
+            icons: [TechIcons[0].svg, TechIcons[7].svg],
+
             tags: ["Portfolio", "React"],
             site: true,
             image: image12,
@@ -166,22 +180,15 @@ export default function Projects() {
             id: 11,
             title: "Team Web (Tech Chronicles)",
             description: "First responsive website project demonstrating foundational web development skills and mobile-friendly responsive design using HTML, CSS, and JavaScript.",
-            icons: [<FaHtml5 />, <FaCss3 />, <DiJavascript1 />],
+            icons: [TechIcons[6].svg, TechIcons[7].svg, TechIcons[8].svg],
+
             tags: ["Responsive", "First Web Project"],
             site: true,
             image: image6,
             site_link: 'https://ashen-sam.github.io/TEAM-TECH-TRONICLES/',
             link: "https://github.com/Ashen-sam/TEAM-TECH-TRONICLES"
         },
-        {
-            id: 12,
-            title: "Portfolio v2",
-            description: "Enhanced personal portfolio website showcasing projects, skills, and professional experience with modern design and improved user experience.",
-            icons: [<FaReact />, <BiLogoTailwindCss />, <SiFramer />],
-            tags: ["Portfolio", "Current"],
-            image: image8,
-            link: 'https://github.com/Ashen-sam/final-Project'
-        }
+
     ];
 
 
@@ -232,7 +239,7 @@ export default function Projects() {
 
                 <div className="p-6 mx-auto bg-white rounded-2xl rounded-tl-none shadow-sm border border-gray-200">
                     <motion.div className="grid grid-cols-1 md:grid-cols-4 gap-6" variants={containerVariants}>
-                        {projects.map((project) => (
+                        {projects.map((project,) => (
                             <motion.div
                                 key={project.id}
                                 className="group bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition-all duration-300 cursor-pointer"
@@ -245,22 +252,18 @@ export default function Projects() {
                                         alt={project.title}
                                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                                     /> : (
-                                        <div className="flex flex-col justify-center items-center min-h-[200px] text-gray-700 text-lg font-medium italic">
+                                        <div className="flex flex-col  justify-center items-center min-h-[200px] text-gray-700 text-lg font-medium italic">
 
-                                            <motion.div
-                                                className="mb-4"
-                                                initial={{ opacity: 0, y: -10 }}
-                                                animate={{ opacity: 1, y: 0 }}
-                                                transition={{ duration: 0.8 }}
+                                            <div className="text-xs p-10 text-center"
                                             >
-                                                Images are In Development.<br /> Sorry guys!
-                                            </motion.div>
+                                                Image currently under development.
+                                            </div>
 
                                             <div className="flex space-x-2">
                                                 {[0, 1, 2].map((i) => (
                                                     <motion.span
                                                         key={i}
-                                                        className={` w-3 h-3 bg-gray-500 rounded-full`}
+                                                        className={` w-2 h-2 bg-gray-500 rounded-full`}
                                                         animate={{ y: [0, -8, 0] }}
                                                         transition={{
                                                             duration: 0.6,
@@ -281,10 +284,10 @@ export default function Projects() {
                                     <h3 className="text-md font-bold text-gray-900 mb-2">{project.title}</h3>
                                     <p className="text-xs text-gray-600 leading-relaxed mb-4 line-clamp-3">{project.description}</p>
 
-                                    <div className="flex items-center gap-2 text-white text-lg mb-4 absolute -top-8">
+                                    <div className={`flex items-center gap-2 text-black text-lg mb-4 `}>
                                         {Array.isArray(project.icons)
                                             ? project.icons.map((icon, idx) => (
-                                                <div key={idx} className="hover:text-gray-900 transition-colors">
+                                                <div key={idx} className="hover:text-gray-900 transition-colors w-[17px]">
                                                     {icon}
                                                 </div>
                                             ))
