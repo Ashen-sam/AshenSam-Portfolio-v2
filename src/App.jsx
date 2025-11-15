@@ -8,6 +8,7 @@ import AboutMe from "./components/title";
 import Footer from "./footer";
 import pageLogo from '../public/logo3.png'
 import SmoothScroll from "./components/SmoothScroll";
+import { AlertMessage } from "./components/AlertMessage";
 
 const App = () => {
   const [showSplash, setShowSplash] = useState(true);
@@ -20,7 +21,6 @@ const App = () => {
   return (
     <ThemeProvider>
       <SmoothScroll />
-
       <div className="relative min-h-screen overflow-hidden">
         <AnimatePresence mode="wait">
           {showSplash && (
@@ -79,6 +79,8 @@ const App = () => {
 
         {!showSplash && (
           <>
+            <AlertMessage />
+
             <motion.div animate={{
 
             }} className=" top-4 text-xs fixed right-8  shadow-sm border p-2 rounded-xl bg-white  z-10   font-medium ">

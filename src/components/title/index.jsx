@@ -11,7 +11,7 @@ const AboutMe = () => {
     const stats = [
         { label: "Age", value: 24 },
         { label: "Projects(Pe & Ac)", value: "15" },
-        { label: "Industry Experience", value: "1" },
+        { label: "Industry Experience", value: "1y" },
         { label: "Development Experience", value: "2" },
     ];
 
