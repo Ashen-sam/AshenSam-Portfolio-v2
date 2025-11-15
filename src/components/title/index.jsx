@@ -4,10 +4,16 @@ import { VscActivateBreakpoints } from "react-icons/vsc";
 import ProfileImage from "../../../public/IMG_6579-removebg-preview.png";
 import { useTheme } from "../ThemeContext";
 import { UseTitle } from "../hooks/useTitle";
-//asdasd
+
 const AboutMe = () => {
     const { theme } = useTheme();
     const { floatingVariants, jumpVariants, pulseVariants, tags, setShowQuotes, showQuotes } = UseTitle()
+    const stats = [
+        { label: "Age", value: 24 },
+        { label: "Projects(Pe & Ac)", value: "15+" },
+        { label: "Industry Experience", value: "1" },
+        { label: "Development Experience", value: "2+" },
+    ];
 
     return (
         <motion.div
@@ -141,8 +147,25 @@ const AboutMe = () => {
                         }}
                         className="overflow-hidden"
                     >
+                        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 p-6">
+                            {stats.map((stat, index) => (
+                                <motion.div
+                                    key={index}
+                                    className={` rounded-2xl p-6 text-center ${theme.secondary}`}
+                                    initial={{ opacity: 0, y: 20 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ delay: index * 0.2, duration: 0.6, type: "spring" }}
+                                    whileHover={{ scale: 1.05 }}
+                                >
+                                    <div className={`sm:text-6xl text-4xl font-bold text-[${theme.secondary}]`}>
+                                        {stat.value}
+                                    </div>
+                                    <div className="text-gray-600 mt-2 font-medium">{stat.label}</div>
+                                </motion.div>
+                            ))}
+                        </div>
                         <motion.div
-                            className="mt-6"
+                            className="mt-2"
                             initial="hidden"
                             animate="visible"
                             variants={{
