@@ -28,14 +28,14 @@ const AboutMe = () => {
             }}
         >
             <motion.div
-                className="bg-gray-700 w-[100px] p-2 text-white flex items-center justify-center rounded-t-lg"
+                className="bg-gray-700  w-[100px] p-2 dark:bg-gray-800 text-white flex items-center justify-center rounded-t-lg"
                 variants={jumpVariants}
             >
                 Hi There
             </motion.div>
 
             <motion.div
-                className="bg-white rounded-2xl rounded-tl-none border border-gray-200 shadow-sm p-8 pb-0"
+                className="bg-white dark:border-gray-800 dark:bg-transparent/40 rounded-2xl rounded-tl-none border border-zinc-200  shadow-sm p-8 pb-0"
                 variants={jumpVariants}
             >
                 <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6 h-max">
@@ -61,16 +61,16 @@ const AboutMe = () => {
                         className="flex-1 text-center sm:text-left"
                         variants={jumpVariants}
                     >
-                        <h1 className="text-3xl sm:text-4xl font-bold text-gray-700 mb-3">
+                        <h1 className="text-3xl sm:text-4xl font-bold dark:text-gray-100 text-gray-700 mb-3">
                             Hey I'm{" "}
                             <span className={`${theme.secondary}`}>Ashen,</span>{" "}
-                            <span className="text-xl font-medium text-gray-700 italic">
+                            <span className="text-xl font-medium dark:text-gray-100 text-gray-700 italic">
                                 Software Engineer
                             </span>
                         </h1>
                         <motion.p
                             variants={jumpVariants}
-                            className="text-[14px] text-gray-600 leading-relaxed mb-4"
+                            className="text-[14px] dark:text-gray-200 text-gray-600 leading-relaxed mb-4"
                         >
                             As an undergraduate pursuing a BSc in Software Engineering, I am passionate about web development and driven to deliver innovative, high-quality solutions. I am eager to leverage my technical expertise and problem-solving skills to contribute to impactful, real-world projects, while continuously expanding my knowledge and professional experience in the field.
                         </motion.p>
@@ -89,7 +89,7 @@ const AboutMe = () => {
                             {tags.map((tag, index) => (
                                 <motion.div
                                     key={index}
-                                    className={`border  border-gray-200 px-2 bg-slate-50 shadow-sm py-1 text-xs rounded-lg`}
+                                    className={`border  border-gray-200 px-2 bg-slate-50 dark:bg-zinc-800 dark:border-neutral-700 dark:text-gray-100 shadow-sm py-1 text-xs rounded-lg`}
                                     variants={{
                                         hidden: { y: 20, opacity: 0 },
                                         visible: {
@@ -118,7 +118,7 @@ const AboutMe = () => {
                     whileHover={{ scale: 1.2 }}
                     whileTap={{ scale: 0.9 }}
                     onClick={() => setShowQuotes(!showQuotes)}
-                    className="text-gray-700 text-2xl"
+                    className="text-gray-700 dark:text-gray-300 text-2xl"
                 >
                     {showQuotes ? <BiUpArrow /> : <BiDownArrow />}
                 </motion.div>
@@ -193,7 +193,7 @@ const AboutMe = () => {
                                         )}
 
                                     </div>
-                                    <div className="text-gray-600 mt-2 font-medium">{stat.label}</div>
+                                    <div className="text-gray-600 dark:text-gray-200 mt-2 font-medium">{stat.label}</div>
                                 </motion.div>
                             ))}
                         </div>
@@ -227,7 +227,7 @@ const AboutMe = () => {
                                             },
                                         },
                                     }}
-                                    className="bg-white flex rounded-lg  my-2 border border-gray-200 shadow-md p-4 hover:shadow-lg transition-all text-gray-800 text-sm leading-relaxed tracking-wide items-center gap-3"
+                                    className="bg-white dark:border-gray-800 dark:bg-transparent/35 dark:text-gray-100  flex rounded-lg  my-2 border border-gray-200 shadow-md p-4 hover:shadow-lg transition-all text-gray-800 text-sm leading-relaxed tracking-wide items-center gap-3"
                                 >
                                     <div>
                                         <VscActivateBreakpoints className={`${theme.secondary} text-md`} />

@@ -28,26 +28,26 @@ const Footer = () => {
 
     return (
         <motion.footer
-            className="bg-white w-full py-10 mt-auto shadow-inner"
+            className="bg-white dark:bg-transparent/50 w-full py-10 mt-auto shadow-inner"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
         >
             <div className="max-w-5xl mx-auto px-4">
                 {/* Top Section */}
-                <div className="flex flex-col md:flex-row justify-between items-center gap-6 pb-6 border-b border-gray-200">
+                <div className="flex flex-col md:flex-row justify-between items-center gap-6 pb-6 border-b dark:border-gray-700 border-gray-200">
 
                     {/* Name & Title */}
                     <motion.div
                         className="text-center md:text-left"
                         variants={leftVariants}
                     >
-                        <h2 className="text-gray-700 text-xl font-bold mb-1">
+                        <h2 className="text-gray-700 dark:text-gray-200 text-xl font-bold mb-1">
                             <span className="text-sm font-medium">Developed by :</span>{" "}
                             <span className={`${theme.secondary}`}>Ashen</span>{" "}
                             <span>Sam</span>
                         </h2>
-                        <p className="text-gray-500 text-sm">
+                        <p className="text-gray-500 dark:text-gray-300 text-sm">
                             Software Engineer | Developer
                         </p>
                     </motion.div>
@@ -57,7 +57,7 @@ const Footer = () => {
                         className="flex flex-col md:flex-row items-center gap-3 text-center md:text-left"
                         variants={rightVariants}
                     >
-                        <span className="text-gray-500 text-sm">Developed with:</span>
+                        <span className="text-gray-500 dark:text-gray-300 text-sm">Developed with:</span>
                         <div className="flex items-center gap-3 text-2xl mt-1 md:mt-0">
                             <FaReact className="text-[#61DAFB] hover:scale-110 transition-transform" />
                             <div className="w-6">

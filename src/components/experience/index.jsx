@@ -31,14 +31,14 @@ const Experience = () => {
         >
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mt-10">
                 <motion.div
-                    className="bg-gray-700 w-[160px] p-2 text-white flex items-center justify-center rounded-t-lg"
+                    className="bg-gray-700 w-[160px] dark:bg-gray-800 p-2 text-white flex items-center justify-center rounded-t-lg"
                     variants={jumpVariants}
                 >
                     My Experience
                 </motion.div>
 
                 <motion.div
-                    className="bg-white rounded-2xl rounded-tl-none shadow-sm border border-gray-200 overflow-hidden "
+                    className="bg-white rounded-2xl dark:border-gray-800 dark:bg-transparent/40 rounded-tl-none shadow-sm border border-gray-200 overflow-hidden "
                     variants={jumpVariants}
                 >
                     <motion.div className="p-6 sm:p-8" variants={jumpVariants}>
@@ -48,29 +48,29 @@ const Experience = () => {
                                     <img src={companyLogo} alt="Expernetic Logo" className="w-10 h-10 object-contain" />
                                 </motion.div>
                                 <motion.div variants={jumpVariants} className='flex justify-between items-center md:flex-row flex-col w-full '>
-                                    <div><h3 className="text-xl font-bold text-gray-700 mb-1">Software Engineer Intern</h3>
-                                        <p className="text-base text-gray-700 font-semibold mb-2">Expernetic Pvt Ltd</p></div>
+                                    <div><h3 className="text-xl dark:text-gray-200 font-bold text-gray-700 mb-1">Software Engineer Intern</h3>
+                                        <p className="text-base text-gray-700 font-semibold mb-2 dark:text-gray-300">Expernetic Pvt Ltd</p></div>
                                     <div className="flex flex-wrap gap-2 text-sm text-gray-600">
                                         <div className="flex items-center gap-2">
                                             <FaCalendarAlt className="text-gray-500 text-xs" />
-                                            <span>May 2024 - May 2025</span>
+                                            <span className='dark:text-gray-300'>May 2024 - May 2025</span>
                                         </div>
                                         <span className="text-gray-400">•</span>
-                                        <span>1 year</span>
+                                        <span className='dark:text-gray-300'>1 year</span>
                                     </div>
                                 </motion.div>
                             </motion.div>
                         </motion.div>
 
                         <motion.div className="mb-5" variants={jumpVariants}>
-                            <p className="text-sm text-gray-700 leading-relaxed">
+                            <p className="text-sm text-gray-700 leading-relaxed dark:text-gray-300">
                                 Completed a 1-year internship working in a collaborative Agile environment, contributing to frontend development across multiple projects including Test Bolt (QA tool), Inzinq HR application, and the company website. Gained hands-on experience in building responsive user interfaces, implementing features efficiently, and applying best practices in modern web development.
                             </p>
                         </motion.div>
 
                         <motion.div className="mb-5" variants={jumpVariants}>
-                            <h4 className="text-base font-bold text-gray-700 mb-3">Key Responsibilities</h4>
-                            <div className="space-y-2">
+                            <h4 className="text-base font-bold text-gray-700 mb-3 dark:text-gray-200">Key Responsibilities</h4>
+                            <div className="space-y-2 ">
                                 {[
                                     "Developed responsive user interfaces using React, Next.js, TypeScript, and modern frontend technologies",
                                     "Participated in Agile Scrum ceremonies and collaborated with cross-functional teams",
@@ -80,17 +80,17 @@ const Experience = () => {
                                         <div>
                                             <VscActivateBreakpoints className={`${theme.secondary} text-xs`} />
                                         </div>
-                                        <p className="text-sm text-gray-700">{res}</p>
+                                        <p className="text-sm text-gray-700 dark:text-gray-300">{res}</p>
                                     </motion.div>
                                 ))}
                             </div>
                         </motion.div>
 
                         <motion.div variants={jumpVariants}>
-                            <h4 className="text-base font-bold text-gray-700 mb-3">Technologies & Tools</h4>
+                            <h4 className="text-base font-bold text-gray-700 mb-3 dark:text-gray-200">Technologies & Tools</h4>
                             <div className="flex flex-wrap gap-2">
                                 {["React", "Next.js", "TypeScript", "Redux & RTK Query", "Tailwind CSS", "Agile/Scrum", "MUI", "Azure Devops"].map((tech, i) => (
-                                    <span key={i} className="border  border-gray-200 px-2 bg-slate-50 shadow-sm py-1 text-xs rounded-lg">{tech}</span>
+                                    <span key={i} className="border  border-gray-200 px-2 bg-slate-50 dark:bg-zinc-800 dark:text-gray-200 dark:border-neutral-700 shadow-sm py-1 text-xs rounded-lg">{tech}</span>
                                 ))}
                             </div>
                         </motion.div>

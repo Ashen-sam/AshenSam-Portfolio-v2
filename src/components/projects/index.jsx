@@ -42,17 +42,17 @@ export default function Projects() {
         <SiTailwindcss color="#38B2AC" />,
         <SiRedux color="#764ABC" />,
         <SiSupabase color="#3ECF8E" />,
-        <SiShadcnui color="#000000" />,
+        <SiShadcnui className="dark:text-gray-100 text-[#000000]" />,
         <SiJavascript color="#F7DF1E" />,
         <SiHtml5 color="#E34F26" />,
         <SiCss3 color="#1572B6" />,
         <SiPostman color="#FF6C37" />,
         <FaJava color="#007396" />,
-        <SiNextdotjs color="#000000" />,
+        <SiNextdotjs className="dark:text-gray-100 text-[#000000]" />,
         <SiMui color="#007FFF" />,
         <SiGithub color="#764ABC" />,
         <SiAzuredevops color="#007FFF" />,
-        <SiVercel color="#000000" />
+        <SiVercel className="dark:text-gray-100 text-[#000000]" />
     ];
 
 
@@ -225,7 +225,7 @@ export default function Projects() {
                     className="flex items-center "
                 >
                     <motion.div
-                        className="bg-gray-700 text-white px-4 py-2 rounded-t-lg flex items-center justify-center"
+                        className="bg-gray-700 dark:bg-gray-800 text-white px-4 py-2 rounded-t-lg flex items-center justify-center"
                         whileHover={{ scale: 1.05 }}
                         transition={{ type: "spring", stiffness: 300 }}
                     >
@@ -237,12 +237,12 @@ export default function Projects() {
 
                 </motion.div>
 
-                <div className="p-6 mx-auto bg-white rounded-2xl rounded-tl-none shadow-sm border border-gray-200">
+                <div className="p-6 mx-auto bg-white dark:border-none dark:bg-transparent/10 rounded-2xl rounded-tl-none shadow-sm border border-gray-200">
                     <motion.div className="grid grid-cols-1 md:grid-cols-4 gap-6" variants={containerVariants}>
                         {projects.map((project,) => (
                             <motion.div
                                 key={project.id}
-                                className="group bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition-all duration-300 cursor-pointer"
+                                className="group bg-white dark:bg-zinc-900 rounded-2xl shadow-sm border border-gray-200 dark:border-gray-700 overflow-hidden hover:shadow-md transition-all duration-300 cursor-pointer"
                                 variants={cardVariants}
                                 whileHover={{ scale: 1.05 }}
                             >
@@ -281,8 +281,8 @@ export default function Projects() {
                                 </div>
 
                                 <div className="p-3 relative">
-                                    <h3 className="text-md font-bold text-gray-900 mb-2">{project.title}</h3>
-                                    <p className="text-xs text-gray-600 leading-relaxed mb-4 line-clamp-3">{project.description}</p>
+                                    <h3 className="text-md font-bold dark:text-gray-200 text-gray-900 mb-2">{project.title}</h3>
+                                    <p className="text-xs text-gray-600 dark:text-gray-300 leading-relaxed mb-4 line-clamp-3">{project.description}</p>
 
                                     <div className={`flex items-center gap-2 text-black text-lg mb-4 `}>
                                         {Array.isArray(project.icons)
@@ -301,8 +301,8 @@ export default function Projects() {
                                             rel="noopener noreferrer"
                                             className="inline-flex items-center gap-2 text-sm text-gray-700 hover:text-gray-900 font-medium group/link transition-colors"
                                         >
-                                            <span className="text-xs">View project</span>
-                                            <FaArrowRight className="text-xs group-hover/link:translate-x-1 transition-transform" />
+                                            <span className="text-xs dark:text-gray-300">View project</span>
+                                            <FaArrowRight className="dark:text-gray-300 text-xs group-hover/link:translate-x-1 transition-transform" />
                                         </a>
                                     )}
                                 </div>
