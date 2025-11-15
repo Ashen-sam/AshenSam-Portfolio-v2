@@ -14,7 +14,7 @@ export const AlertMessage = ({ message = "Hi I'm updating the site to make thing
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -20 }}
                     transition={{ duration: 0.3 }}
-                    className="fixed top-4 left-0 right-0 mx-auto w-[calc(100%-2rem)] max-w-2xl text-center bg-red-50 border-l-4 border-red-400 shadow-lg rounded-md flex items-center justify-between px-4 py-3 z-50"
+                    className="fixed top-4 left-0 right-0 mx-auto w-[calc(100%-2rem)] max-w-2xl text-center bg-red-50 border-l-4 border-red-400 shadow-lg rounded-md flex items-center justify-between px-4 py-3 z-[100]"
                 >
                     <div className="flex items-center gap-3">
                         <motion.div
