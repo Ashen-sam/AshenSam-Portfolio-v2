@@ -64,14 +64,9 @@ const AboutMe = () => {
                         </h1>
                         <motion.p
                             variants={jumpVariants}
-                            className="text-base text-gray-600 leading-relaxed mb-4"
+                            className="text-[14px] text-gray-600 leading-relaxed mb-4"
                         >
-                            As an undergraduate student pursuing a BSc Degree in
-                            Software Engineering, I am passionate about web
-                            development and committed to contributing innovative
-                            solutions in the field. I am seeking opportunities
-                            to apply my skills and knowledge to real-world
-                            projects.
+                            As an undergraduate pursuing a BSc in Software Engineering, I am passionate about web development and driven to deliver innovative, high-quality solutions. I am eager to leverage my technical expertise and problem-solving skills to contribute to impactful, real-world projects, while continuously expanding my knowledge and professional experience in the field.
                         </motion.p>
 
                         <motion.div
