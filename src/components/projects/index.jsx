@@ -64,7 +64,7 @@ export default function Projects() {
             icons: [TechIcons[0].svg, TechIcons[1].svg, TechIcons[2].svg, TechIcons[3].svg, TechIcons[10].svg, TechIcons[11].svg, TechIcons[5].svg],
             tags: ["Full Stack", "Project Management"],
             image: image1,
-            link: 'https://github.com/Ashen-sam/pro-app-api-net'
+            link: 'https://github.com/Ashen-sam/project-manage-app-client'
         },
         {
             id: 1,
@@ -104,7 +104,7 @@ export default function Projects() {
 
             tags: ["Portfolio", "Current"],
             image: image8,
-            link: 'https://github.com/Ashen-sam/final-Project'
+            link: 'https://github.com/Ashen-sam/AshenSam-Portfolio-v2'
         },
         {
             id: 6,
