@@ -127,7 +127,7 @@ export const MainContent = () => {
                                 className="fixed inset-0 -z-10"
                                 style={{
                                     backgroundImage: `
-                        radial-gradient(circle at center, rgba(255, 255, 255, 0.09) 0%, rgba(0, 0, 0, 0.65) 75%),
+                        radial-gradient(circle at center, rgba(255, 255, 255, 0.09) 0%, rgba(0, 0, 0, 0.65) 60%),
                         linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
                         linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px)
                     `,

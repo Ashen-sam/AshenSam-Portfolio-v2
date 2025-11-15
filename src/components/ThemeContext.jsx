@@ -29,9 +29,18 @@ export const ThemeProvider = ({ children }) => {
         return localStorage.getItem("theme") || "orange";
     });
 
-    // Load dark mode from localStorage, default to false
+    // Detect system dark mode preference
+    const getSystemDarkMode = () => {
+        if (typeof window !== "undefined" && window.matchMedia) {
+            return window.matchMedia("(prefers-color-scheme: dark)").matches;
+        }
+        return false;
+    };
+
+    // Load dark mode from localStorage, default to system preference
     const [isDarkMode, setIsDarkMode] = useState(() => {
-        return localStorage.getItem("darkMode") === "true" || false;
+        const stored = localStorage.getItem("darkMode");
+        return stored !== null ? stored === "true" : getSystemDarkMode();
     });
 
     // Apply theme changes
@@ -48,6 +57,14 @@ export const ThemeProvider = ({ children }) => {
             document.documentElement.classList.remove("dark");
         }
     }, [isDarkMode]);
+
+    // Listen for system preference changes
+    useEffect(() => {
+        const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+        const handleChange = (e) => setIsDarkMode(e.matches);
+        mediaQuery.addEventListener("change", handleChange);
+        return () => mediaQuery.removeEventListener("change", handleChange);
+    }, []);
 
     const switchTheme = (name) => {
         if (themes[name]) setThemeName(name);
