@@ -61,7 +61,7 @@ export default function Projects() {
             id: 0,
             title: "Project Management Web App (ongoing)",
             description: "A collaborative web app that lets users create and manage projects, assign tasks, comment, react/like, and follow progress in real time.",
-            icons: [TechIcons[0].svg, TechIcons[1].svg, TechIcons[2].svg, TechIcons[3].svg, TechIcons[10].svg, TechIcons[11].svg, TechIcons[5].svg],
+            icons: [TechIcons[0].svg, TechIcons[1].svg, TechIcons[2].svg, TechIcons[3].svg, TechIcons[10].svg, TechIcons[11].svg, TechIcons[22].svg],
             tags: ["Full Stack", "Project Management"],
             image: image1,
             link: 'https://github.com/Ashen-sam/project-manage-app-client'
@@ -110,7 +110,7 @@ export default function Projects() {
             id: 6,
             title: "Sri Lanka Railway Web",
             description: "Modern railway travel experience platform integrating .NET technology stack with React.js and Tailwind CSS for smooth and scalable user interactions.",
-            icons: [TechIcons[0].svg, TechIcons[4].svg, TechIcons[2].svg, TechIcons[17].svg],
+            icons: [TechIcons[0].svg, TechIcons[4].svg, TechIcons[2].svg, TechIcons[17].svg, TechIcons[5].svg],
 
             tags: ["Full Stack", "Modern Web"],
             image: image10,
@@ -287,7 +287,7 @@ export default function Projects() {
                                     <div className={`flex items-center gap-2 text-black text-lg mb-4 `}>
                                         {Array.isArray(project.icons)
                                             ? project.icons.map((icon, idx) => (
-                                                <div key={idx} className="hover:text-gray-900 transition-colors w-[17px]">
+                                                <div key={idx} className="hover:text-gray-900  transition-colors w-[17px]">
                                                     {icon}
                                                 </div>
                                             ))
