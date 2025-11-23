@@ -72,7 +72,7 @@ const AboutMe = () => {
                             variants={jumpVariants}
                             className="text-[14px] dark:text-gray-200 text-gray-600 leading-relaxed mb-4"
                         >
-                            As an undergraduate pursuing a BSc in Software Engineering, I am passionate about web development and driven to deliver innovative, high-quality solutions. I am eager to leverage my technical expertise and problem-solving skills to contribute to impactful, real-world projects, while continuously expanding my knowledge and professional experience in the field.
+                            As a Software Engineering graduate, I am passionate about web development and committed to delivering innovative, high quality solutions. I am eager to apply my technical expertise and problem solving abilities to contribute to impactful real world projects, while continuing to grow professionally and expand my knowledge in the field
                         </motion.p>
 
                         <motion.div

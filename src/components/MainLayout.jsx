@@ -79,7 +79,7 @@ export const MainContent = () => {
 
                 {!showSplash && (
                     <>
-                        <AlertMessage />
+                        {/* <AlertMessage /> */}
 
                         <motion.div
                             animate={{}}
