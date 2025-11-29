@@ -74,7 +74,8 @@ const Experience = () => {
                                 {[
                                     "Developed responsive user interfaces using React, Next.js, TypeScript, and modern frontend technologies",
                                     "Participated in Agile Scrum ceremonies and collaborated with cross-functional teams",
-                                    "Applied SOLID principles and UI/UX best practices to deliver maintainable, scalable solutions"
+                                    "Applied SOLID principles and UI/UX best practices to deliver maintainable, scalable solutions",
+                                    "Built and debugged backend features using .NET and C#, optimized SQL queries, and ensured smooth integration between API and database layers"
                                 ].map((res, i) => (
                                     <motion.div key={i} className="flex items-center gap-3" variants={jumpVariants}>
                                         <div>
@@ -89,7 +90,7 @@ const Experience = () => {
                         <motion.div variants={jumpVariants}>
                             <h4 className="text-base font-bold text-gray-700 mb-3 dark:text-gray-200">Technologies & Tools</h4>
                             <div className="flex flex-wrap gap-2">
-                                {["React", "Next.js", "TypeScript", "Redux & RTK Query", "Tailwind CSS", "Agile/Scrum", "MUI", "Azure Devops"].map((tech, i) => (
+                                {["React", "Next.js", "TypeScript", "Redux & RTK Query", "Tailwind CSS", "Agile/Scrum", "MUI", "Azure Devops", ".NET", "SQL"].map((tech, i) => (
                                     <span key={i} className="border  border-gray-200 px-2 bg-slate-50 dark:bg-zinc-800 dark:text-gray-200 dark:border-neutral-700 shadow-sm py-1 text-xs rounded-lg">{tech}</span>
                                 ))}
                             </div>
