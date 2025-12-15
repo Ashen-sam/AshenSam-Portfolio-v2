@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
-import pageLogo from '../../public/logo3.png'
+import pageLogo from '../../public/og-image.png'
 import AboutMe from './title/index';
 import Experience from './experience/index';
 import Projects from './projects/index';
