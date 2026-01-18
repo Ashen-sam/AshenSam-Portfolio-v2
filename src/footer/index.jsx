@@ -28,16 +28,13 @@ const Footer = () => {
 
     return (
         <motion.footer
-            className="bg-white dark:bg-transparent/50 w-full py-10 mt-auto shadow-inner"
+            className=" dark:bg-transparent w-full py-10 mt-auto "
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
         >
             <div className="max-w-5xl mx-auto px-4">
-                {/* Top Section */}
-                <div className="flex flex-col md:flex-row justify-between items-center gap-6 pb-6 border-b dark:border-gray-700 border-gray-200">
-
-                    {/* Name & Title */}
+                <div className="flex flex-col md:flex-row justify-between items-center gap-6 pb-6  dark:border-gray-700 border-gray-200">
                     <motion.div
                         className="text-center md:text-left"
                         variants={leftVariants}
@@ -52,7 +49,6 @@ const Footer = () => {
                         </p>
                     </motion.div>
 
-                    {/* Built With */}
                     <motion.div
                         className="flex flex-col md:flex-row items-center gap-3 text-center md:text-left"
                         variants={rightVariants}

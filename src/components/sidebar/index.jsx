@@ -31,7 +31,7 @@ export const Sidebar = () => {
         <>
             <button
                 onClick={toggleSidebar}
-                className="sm:hidden fixed top-4 right-40 z-[60] p-2 rounded-xl bg-white dark:bg-gray-800 shadow-sm border border-gray-200 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-700 transition"
+                className="sm:hidden fixed top-14 right-4 z-[60] p-2 rounded-lg bg-white dark:bg-zinc-800 shadow-sm border border-gray-200 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-700 transition"
             >
                 {isExpanded ? <FaTimes className="text-gray-800 dark:text-gray-200 text-lg" /> : <FaBars className="text-gray-800 dark:text-gray-200 text-lg" />}
             </button>
@@ -45,7 +45,7 @@ export const Sidebar = () => {
                 animate="visible"
             >
                 <motion.div
-                    className={`bg-white dark:bg-transparent/40 dark:border-zinc-800 shadow-lg rounded-r-2xl border border-gray-200 transition-all duration-300 ${isExpanded ? 'w-14' : 'w-0 sm:w-14'
+                    className={`bg-white dark:bg-transparent/80 dark:border-zinc-800 shadow-lg rounded-r-2xl border border-gray-200 transition-all duration-300 ${isExpanded ? 'w-14' : 'w-0 sm:w-14'
                         } overflow-hidden`}
                 >
                     {/* Social Links */}
