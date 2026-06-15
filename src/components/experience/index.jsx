@@ -17,25 +17,9 @@ const Experience = () => {
     };
 
     const experiences = [
-        // {
-        //     id: 1,
-        //     title: "Associate Software Engineer",
-        //     company: "Omak Pvt Ltd",
-        //     logo: companyLogo2,
-        //     period: "January 2026 - Present",
-        //     duration: "Present",
-        //     description: "Working as a full-stack developer building scalable web applications using modern technologies. Contributing to both frontend and backend development, implementing new features, and maintaining existing systems in an Agile environment.",
-        //     responsibilities: [
-        //         "Developed full-stack applications using Vue.js, Node.js, Express, and TypeScript",
-        //         "Designed and implemented RESTful APIs and integrated with CouchDB database",
-        //         "Collaborated with cross-functional teams using Agile methodologies",
-        //         "Deployed and maintained applications on Azure cloud infrastructure",
-        //         "Managed version control and code reviews using Bitbucket"
-        //     ],
-        //     technologies: ["Vue.js", "Node.js", "Express", "TypeScript", "CouchDB", "Azure", "Bitbucket", "Agile/Scrum", "Full-Stack Development"]
-        // },
+ 
         {
-            id: 2,
+            id: 1,
             title: "Software Engineer Intern",
             company: "Expernetic Pvt Ltd",
             logo: companyLogo,
